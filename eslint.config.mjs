@@ -12,6 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    files: ["src/**/*.{ts,tsx}", "src/app/admin/**/*.{ts,tsx}", "src/lib/logger.ts"],
     languageOptions: {
       parserOptions: {
         warnOnUnsupportedTypeScriptVersion: false,
