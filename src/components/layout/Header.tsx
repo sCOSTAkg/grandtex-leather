@@ -29,79 +29,49 @@ export default function Header({ transparent = false }) {
 
   const navLinks = [
     {
-      title: "Кожа",
-      href: "/leathers",
-      image: "https://ext.same-assets.com/1118492138/3442149313.jpeg",
+      title: "Услуги",
+      href: "/services",
+      image: "https://images.unsplash.com/photo-1582719478171-2d80782c32b5",
       subLinks: [
-        {
-          title: "Коллекция Весна-Лето 27",
-          href: "/collections/spring-summer-2027",
-        },
-        {
-          title: "Коллекция Осень-Зима 26",
-          href: "/collections/fw26",
-        },
+        { title: "Разработка лекал", href: "/services#patterns" },
+        { title: "Пошив образцов", href: "/services#samples" },
+        { title: "Серийное производство", href: "/services#mass" },
+        { title: "Упаковка", href: "/services#packaging" },
       ],
     },
     {
-      title: "Тиснение и перфорация",
-      href: "/emboss-perforation",
-      image: "https://ext.same-assets.com/1118492138/3513175735.jpeg",
+      title: "О нас",
+      href: "/about",
+      image: "https://images.unsplash.com/photo-1525171254930-643fcf1f5ec4",
     },
     {
-      title: "Почему GRANDTEX?",
-      href: "/why-grandtex",
-      image: "https://ext.same-assets.com/1118492138/2560085916.jpeg",
+      title: "Портфолио",
+      href: "/portfolio",
+      image: "https://images.unsplash.com/photo-1542060748-10c28b62716a",
+    },
+    {
+      title: "Производство",
+      href: "/production",
+      image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f",
       subLinks: [
-        {
-          title: "О GRANDTEX",
-          href: "/about-grandtex",
-        },
-        {
-          title: "Кожевенные заводы",
-          href: "/tanneries",
-        },
+        { title: "Мужская одежда", href: "/production/men" },
+        { title: "Женская одежда", href: "/production/women" },
+        { title: "Деловые костюмы", href: "/production/business" },
+        { title: "Спортивная одежда", href: "/production/sport" },
+        { title: "Детская одежда", href: "/production/kids" },
       ],
     },
     {
-      title: "Устойчивость",
-      href: "/sustainability",
-      image: "https://ext.same-assets.com/1118492138/180971912.jpeg",
-      subLinks: [
-        {
-          title: "Операционное совершенство",
-          href: "/sustainability#operational-excellence",
-        },
-        {
-          title: "Циркулярность",
-          href: "/sustainability#circularity",
-        },
-        {
-          title: "Климатические действия",
-          href: "/sustainability#climate-action",
-        },
-        {
-          title: "Социальное воздействие",
-          href: "/sustainability#social-impact",
-        },
-      ],
-    },
-    {
-      title: "Основные моменты",
-      href: "/highlights",
-    },
-    {
-      title: "Обучение",
-      href: "/education",
-    },
-    {
-      title: "Локации",
+      title: "Контакты",
       href: "/contact",
+      image: "https://images.unsplash.com/photo-1520975698519-59cfeeee39a4",
     },
-    {
-      title: "Ресурсы",
-      href: "/resources",
-    },
+  ];
+
+  const extraLinks = [
+    { title: "Калькулятор стоимости", href: "/calculator" },
+    { title: "FAQ", href: "/faq" },
+    { title: "Блог", href: "/blog" },
   ];
 
   return (
@@ -200,7 +170,7 @@ export default function Header({ transparent = false }) {
                       Дополнительная информация
                     </h2>
                     <ul className="grid grid-cols-2 gap-y-2 gap-x-4">
-                      {navLinks.slice(4).map((link) => (
+                      {extraLinks.map((link) => (
                         <li key={link.title}>
                           <Link
                             href={link.href}
