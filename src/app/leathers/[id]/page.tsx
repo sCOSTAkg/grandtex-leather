@@ -116,7 +116,7 @@ export default async function LeatherDetailPage({
 
   if (!product) {
     return (
-      <MainLayout>
+      <MainLayout transparentHeader={{ transparent: false }}>
         <div className="py-40 px-8 text-center">
           <h1 className="text-3xl font-bold mb-4">Продукт не найден</h1>
           <p className="mb-8">
@@ -134,7 +134,7 @@ export default async function LeatherDetailPage({
   }
 
   return (
-    <MainLayout>
+    <MainLayout transparentHeader={{ transparent: false }}>
       <div className="mt-20 pt-8">
         {/* Breadcrumb */}
         <div className="container mx-auto px-8 mb-8">

@@ -91,7 +91,7 @@ export default function Home() {
   ];
 
   return (
-    <MainLayout transparentHeader={true}>
+    <MainLayout transparentHeader={{ transparent: true }}>
       <LetterLoader
         text="Grandtex Leather"
         className="mt-8 text-center text-4xl font-bold"

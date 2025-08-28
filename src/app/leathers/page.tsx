@@ -62,7 +62,7 @@ export default function LeathersPage() {
   ];
 
   return (
-    <MainLayout>
+    <MainLayout transparentHeader={{ transparent: false }}>
       {/* Hero Section */}
       <section className="relative w-full h-[40vh] bg-primary text-primary-foreground mt-20">
         <div className="absolute inset-0 z-0">

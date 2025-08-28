@@ -49,7 +49,7 @@ export default function TanneriesPage() {
   ];
 
   return (
-    <MainLayout>
+    <MainLayout transparentHeader={{ transparent: false }}>
       {/* Hero Section */}
       <section className="relative w-full h-[50vh] bg-primary text-primary-foreground mt-20">
         <div className="absolute inset-0 z-0">
