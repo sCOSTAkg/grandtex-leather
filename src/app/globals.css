@@ -64,3 +64,23 @@
     text-wrap: balance;
   }
 }
+
+@layer utilities {
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-scroll {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    [data-parallax] {
+      transform: none !important;
+    }
+
+    [data-product-card],
+    [data-product-card] [data-product-image] {
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}
