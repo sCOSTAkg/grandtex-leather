@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { usePathname } from "next/navigation";
 
 export default function Header({ transparent = false }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,93 +16,91 @@ export default function Header({ transparent = false }) {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const headerClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    transparent && !isScrolled
-      ? 'bg-transparent'
-      : 'bg-white shadow-sm'
+    transparent && !isScrolled ? "bg-transparent" : "bg-white shadow-sm"
   }`;
 
-  const textClasses = transparent && !isScrolled ? 'text-white' : 'text-black';
+  const textClasses = transparent && !isScrolled ? "text-white" : "text-black";
 
   const navLinks = [
     {
-      title: 'Leathers',
-      href: '/leathers',
-      image: 'https://ext.same-assets.com/1118492138/3442149313.jpeg',
+      title: "Кожа",
+      href: "/leathers",
+      image: "https://ext.same-assets.com/1118492138/3442149313.jpeg",
       subLinks: [
         {
-          title: 'Spring-Summer 27 Collection',
-          href: '/collections/spring-summer-2027'
+          title: "Коллекция Весна-Лето 27",
+          href: "/collections/spring-summer-2027",
         },
         {
-          title: 'Fall-Winter 26 Collection',
-          href: '/collections/fw26'
-        }
-      ]
+          title: "Коллекция Осень-Зима 26",
+          href: "/collections/fw26",
+        },
+      ],
     },
     {
-      title: 'Emboss & Perforation',
-      href: '/emboss-perforation',
-      image: 'https://ext.same-assets.com/1118492138/3513175735.jpeg',
+      title: "Тиснение и перфорация",
+      href: "/emboss-perforation",
+      image: "https://ext.same-assets.com/1118492138/3513175735.jpeg",
     },
     {
-      title: 'Why GRANDTEX?',
-      href: '/why-grandtex',
-      image: 'https://ext.same-assets.com/1118492138/2560085916.jpeg',
+      title: "Почему GRANDTEX?",
+      href: "/why-grandtex",
+      image: "https://ext.same-assets.com/1118492138/2560085916.jpeg",
       subLinks: [
         {
-          title: 'About GRANDTEX',
-          href: '/about-grandtex'
+          title: "О GRANDTEX",
+          href: "/about-grandtex",
         },
         {
-          title: 'Tanneries',
-          href: '/tanneries'
-        }
-      ]
+          title: "Кожевенные заводы",
+          href: "/tanneries",
+        },
+      ],
     },
     {
-      title: 'Sustainability',
-      href: '/sustainability',
-      image: 'https://ext.same-assets.com/1118492138/180971912.jpeg',
+      title: "Устойчивость",
+      href: "/sustainability",
+      image: "https://ext.same-assets.com/1118492138/180971912.jpeg",
       subLinks: [
         {
-          title: 'Operational Excellence',
-          href: '/sustainability#operational-excellence'
+          title: "Операционное совершенство",
+          href: "/sustainability#operational-excellence",
         },
         {
-          title: 'Circularity',
-          href: '/sustainability#circularity'
+          title: "Циркулярность",
+          href: "/sustainability#circularity",
         },
         {
-          title: 'Climate Action',
-          href: '/sustainability#climate-action'
+          title: "Климатические действия",
+          href: "/sustainability#climate-action",
         },
         {
-          title: 'Social Impact',
-          href: '/sustainability#social-impact'
-        }
-      ]
+          title: "Социальное воздействие",
+          href: "/sustainability#social-impact",
+        },
+      ],
     },
     {
-      title: 'Highlights',
-      href: '/highlights'
+      title: "Основные моменты",
+      href: "/highlights",
     },
     {
-      title: 'Education',
-      href: '/education'
+      title: "Обучение",
+      href: "/education",
     },
     {
-      title: 'Locations',
-      href: '/contact'
+      title: "Локации",
+      href: "/contact",
     },
     {
-      title: 'Resources',
-      href: '/resources'
-    }
+      title: "Ресурсы",
+      href: "/resources",
+    },
   ];
 
   return (
@@ -121,7 +119,7 @@ export default function Header({ transparent = false }) {
               className={`flex items-center space-x-2 transition-colors duration-300 ${textClasses} hover:opacity-75`}
               onClick={() => setIsMenuOpen(true)}
             >
-              <span>Menu</span>
+              <span>Меню</span>
             </button>
           </SheetTrigger>
           <SheetContent
@@ -137,7 +135,7 @@ export default function Header({ transparent = false }) {
                   className="text-gray-500 hover:text-black transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Close
+                  Закрыть
                 </button>
               </div>
 
@@ -160,7 +158,9 @@ export default function Header({ transparent = false }) {
                                 <Link
                                   href={subLink.href}
                                   className={`text-gray-600 hover:text-black transition-colors ${
-                                    pathname === subLink.href ? 'font-medium text-black' : ''
+                                    pathname === subLink.href
+                                      ? "font-medium text-black"
+                                      : ""
                                   }`}
                                 >
                                   {subLink.title}
@@ -176,11 +176,13 @@ export default function Header({ transparent = false }) {
                               src={link.image}
                               alt={link.title}
                               fill
-                              style={{ objectFit: 'cover' }}
+                              style={{ objectFit: "cover" }}
                               className="transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end p-4">
-                              <span className="text-white font-medium">{link.title}</span>
+                              <span className="text-white font-medium">
+                                {link.title}
+                              </span>
                             </div>
                           </div>
                         )}
@@ -189,14 +191,18 @@ export default function Header({ transparent = false }) {
                   </div>
 
                   <div className="space-y-4">
-                    <h2 className="text-lg font-medium">More Information</h2>
+                    <h2 className="text-lg font-medium">
+                      Дополнительная информация
+                    </h2>
                     <ul className="grid grid-cols-2 gap-y-2 gap-x-4">
                       {navLinks.slice(4).map((link) => (
                         <li key={link.title}>
                           <Link
                             href={link.href}
                             className={`text-gray-600 hover:text-black transition-colors ${
-                              pathname === link.href ? 'font-medium text-black' : ''
+                              pathname === link.href
+                                ? "font-medium text-black"
+                                : ""
                             }`}
                           >
                             {link.title}
@@ -232,7 +238,7 @@ export default function Header({ transparent = false }) {
                     href="/contact"
                     className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
                   >
-                    Contact
+                    Контакты
                   </Link>
                 </div>
               </div>

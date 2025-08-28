@@ -1,63 +1,63 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import MainLayout from '@/components/layout/MainLayout';
+import Image from "next/image";
+import Link from "next/link";
+import MainLayout from "@/components/layout/MainLayout";
 
 export default function LeathersPage() {
   // Sample leather products data
   const leatherProducts = [
     {
-      id: 'opulent',
-      name: 'Opulent',
-      collection: 'Spring-Summer 27',
-      type: 'Grain',
-      finish: 'Naturally Tumbled',
-      treatment: 'Semi-Aniline',
-      image: 'https://ext.same-assets.com/1118492138/331861169.jpeg',
+      id: "opulent",
+      name: "Opulent",
+      collection: "Весна-Лето 27",
+      type: "Гладкая",
+      finish: "Естественная барабанная отделка",
+      treatment: "Полуанилиновая",
+      image: "https://ext.same-assets.com/1118492138/331861169.jpeg",
     },
     {
-      id: 'papyrus',
-      name: 'Papyrus',
-      collection: 'Spring-Summer 27',
-      type: 'Grain',
-      finish: 'Naturally Tumbled',
-      treatment: 'Specialty',
-      image: 'https://ext.same-assets.com/1118492138/3988412587.jpeg',
+      id: "papyrus",
+      name: "Papyrus",
+      collection: "Весна-Лето 27",
+      type: "Гладкая",
+      finish: "Естественная барабанная отделка",
+      treatment: "Специальная",
+      image: "https://ext.same-assets.com/1118492138/3988412587.jpeg",
     },
     {
-      id: 'boho',
-      name: 'Boho',
-      collection: 'Spring-Summer 27',
-      type: 'Grain',
-      finish: 'Embossed',
-      treatment: 'Aniline',
-      image: 'https://ext.same-assets.com/1118492138/3513175735.jpeg',
+      id: "boho",
+      name: "Boho",
+      collection: "Весна-Лето 27",
+      type: "Гладкая",
+      finish: "Тиснённая",
+      treatment: "Анилиновая",
+      image: "https://ext.same-assets.com/1118492138/3513175735.jpeg",
     },
     {
-      id: 'sterling',
-      name: 'Sterling',
-      collection: 'Spring-Summer 27',
-      type: 'Grain',
-      finish: 'Smooth',
-      treatment: 'Aniline',
-      image: 'https://ext.same-assets.com/1118492138/3442149313.jpeg',
+      id: "sterling",
+      name: "Sterling",
+      collection: "Весна-Лето 27",
+      type: "Гладкая",
+      finish: "Гладкая",
+      treatment: "Анилиновая",
+      image: "https://ext.same-assets.com/1118492138/3442149313.jpeg",
     },
     {
-      id: 'vortex',
-      name: 'Vortex',
-      collection: 'Fall-Winter 26',
-      type: 'Nubuck',
-      finish: 'Embossed',
-      treatment: 'Waxed',
-      image: 'https://ext.same-assets.com/1118492138/1400919951.jpeg',
+      id: "vortex",
+      name: "Vortex",
+      collection: "Осень-Зима 26",
+      type: "Нубук",
+      finish: "Тиснённая",
+      treatment: "Вощёная",
+      image: "https://ext.same-assets.com/1118492138/1400919951.jpeg",
     },
     {
-      id: 'meridian',
-      name: 'Meridian',
-      collection: 'Fall-Winter 26',
-      type: 'Split',
-      finish: 'Naturally Tumbled',
-      treatment: 'Specialty',
-      image: 'https://ext.same-assets.com/1118492138/542915801.jpeg',
+      id: "meridian",
+      name: "Meridian",
+      collection: "Осень-Зима 26",
+      type: "Спилок",
+      finish: "Естественная барабанная отделка",
+      treatment: "Специальная",
+      image: "https://ext.same-assets.com/1118492138/542915801.jpeg",
     },
   ];
 
@@ -68,18 +68,19 @@ export default function LeathersPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/3442149313.jpeg"
-            alt="Our Leathers"
+            alt="Наши кожи"
             fill
-            style={{ objectFit: 'cover', opacity: 0.7 }}
+            style={{ objectFit: "cover", opacity: 0.7 }}
             priority
           />
         </div>
 
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-8">
-            <h1 className="text-5xl font-bold mb-4">Our Leathers</h1>
+            <h1 className="text-5xl font-bold mb-4">Наши кожи</h1>
             <p className="text-xl max-w-2xl">
-              Discover our premium leather products, crafted with expertise and sustainable practices.
+              Ознакомьтесь с нашими премиальными кожаными продуктами, созданными
+              с мастерством и устойчивыми практиками.
             </p>
           </div>
         </div>
@@ -91,34 +92,34 @@ export default function LeathersPage() {
           <div className="flex flex-wrap gap-4 justify-between items-center">
             <div className="flex flex-wrap gap-4">
               <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
-                <option>All Collections</option>
-                <option>Spring-Summer 27</option>
-                <option>Fall-Winter 26</option>
+                <option>Все коллекции</option>
+                <option>Весна-Лето 27</option>
+                <option>Осень-Зима 26</option>
               </select>
 
               <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
-                <option>All Types</option>
-                <option>Grain</option>
-                <option>Nubuck</option>
-                <option>Split</option>
-                <option>Lining</option>
+                <option>Все типы</option>
+                <option>Гладкая</option>
+                <option>Нубук</option>
+                <option>Спилок</option>
+                <option>Подкладочная</option>
               </select>
 
               <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
-                <option>All Treatments</option>
-                <option>Aniline</option>
-                <option>Semi-Aniline</option>
-                <option>Specialty</option>
-                <option>Waxed</option>
+                <option>Все обработки</option>
+                <option>Анилиновая</option>
+                <option>Полуанилиновая</option>
+                <option>Специальная</option>
+                <option>Вощёная</option>
               </select>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">Sort by:</span>
+              <span className="text-sm text-gray-500">Сортировать:</span>
               <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
-                <option>Newest</option>
-                <option>Name (A-Z)</option>
-                <option>Collection</option>
+                <option>Новинки</option>
+                <option>Название (А-Я)</option>
+                <option>Коллекция</option>
               </select>
             </div>
           </div>
@@ -140,24 +141,34 @@ export default function LeathersPage() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold group-hover:text-accent transition-colors">{product.name}</h3>
-                  <p className="text-sm text-gray-500">{product.collection} Collection</p>
+                  <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    Коллекция {product.collection}
+                  </p>
 
                   <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
                     <div>
-                      <span className="text-xs font-medium text-gray-500">TYPE</span>
+                      <span className="text-xs font-medium text-gray-500">
+                        ТИП
+                      </span>
                       <p className="text-sm">{product.type}</p>
                     </div>
                     <div>
-                      <span className="text-xs font-medium text-gray-500">FINISH</span>
+                      <span className="text-xs font-medium text-gray-500">
+                        ОТДЕЛКА
+                      </span>
                       <p className="text-sm">{product.finish}</p>
                     </div>
                     <div>
-                      <span className="text-xs font-medium text-gray-500">TREATMENT</span>
+                      <span className="text-xs font-medium text-gray-500">
+                        ОБРАБОТКА
+                      </span>
                       <p className="text-sm">{product.treatment}</p>
                     </div>
                   </div>
@@ -171,12 +182,16 @@ export default function LeathersPage() {
       {/* Request Samples CTA */}
       <section className="py-16 px-8 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Request Samples</h2>
+          <h2 className="text-3xl font-bold mb-4">Запросить образцы</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Interested in our leather products? Request physical samples to experience the quality firsthand.
+            Интересует наша продукция? Запросите физические образцы, чтобы лично
+            убедиться в её качестве.
           </p>
-          <Link href="/contact" className="px-8 py-3 bg-black text-white rounded-full text-lg inline-block">
-            Contact Us
+          <Link
+            href="/contact"
+            className="px-8 py-3 bg-black text-white rounded-full text-lg inline-block"
+          >
+            Свяжитесь с нами
           </Link>
         </div>
       </section>
