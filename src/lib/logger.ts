@@ -1,6 +1,6 @@
 import { createLogger, format, transports } from "winston";
-import { existsSync, mkdirSync } from "node:fs";
-import path from "node:path";
+import { existsSync, mkdirSync } from "fs";
+import path from "path";
 
 const logDir = path.join(process.cwd(), "logs");
 if (!existsSync(logDir)) {
