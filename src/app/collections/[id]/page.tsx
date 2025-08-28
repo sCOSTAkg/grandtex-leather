@@ -129,7 +129,7 @@ export default async function CollectionDetailPage({
 
   if (!collection) {
     return (
-      <MainLayout>
+      <MainLayout transparentHeader={{ transparent: false }}>
         <div className="py-40 px-8 text-center">
           <h1 className="text-3xl font-bold mb-4">Коллекция не найдена</h1>
           <p className="mb-8">
@@ -147,7 +147,7 @@ export default async function CollectionDetailPage({
   }
 
   return (
-    <MainLayout>
+    <MainLayout transparentHeader={{ transparent: false }}>
       <div className="mt-20">
         {/* Hero Section */}
         <section className="relative w-full h-[60vh] bg-primary text-primary-foreground">
