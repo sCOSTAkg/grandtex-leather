@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
+import { BLUR_DATA_URL } from "@/lib/blur";
 
 export default function Header({ transparent = false }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -179,7 +180,7 @@ export default function Header({ transparent = false }) {
                               style={{ objectFit: "cover" }}
                               className="transition-transform duration-500 group-hover:scale-110"
                               placeholder="blur"
-                              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                              blurDataURL={BLUR_DATA_URL}
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end p-4">
                               <span className="text-white font-medium">

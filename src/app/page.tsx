@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
+import { BLUR_DATA_URL } from "@/lib/blur";
 
 export default function Home() {
   const latestProducts = [
@@ -101,7 +102,7 @@ export default function Home() {
             priority
             className="animate-ken-burns"
             placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+            blurDataURL={BLUR_DATA_URL}
           />
         </div>
 
@@ -135,7 +136,7 @@ export default function Home() {
                   style={{ objectFit: "cover" }}
                   className="transition-transform duration-500 group-hover:scale-110"
                   placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                  blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div>
@@ -159,7 +160,7 @@ export default function Home() {
                   style={{ objectFit: "cover" }}
                   className="transition-transform duration-500 group-hover:scale-110"
                   placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                  blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div>
@@ -231,7 +232,7 @@ export default function Home() {
                     style={{ objectFit: "cover" }}
                     className="transition-transform duration-500 group-hover:scale-110"
                     placeholder="blur"
-                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                    blurDataURL={BLUR_DATA_URL}
                   />
                 </div>
                 <div className="p-6">
@@ -290,7 +291,7 @@ export default function Home() {
             fill
             style={{ objectFit: "cover" }}
             placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+            blurDataURL={BLUR_DATA_URL}
           />
         </div>
 
@@ -337,7 +338,7 @@ export default function Home() {
                   fill
                   style={{ objectFit: "cover" }}
                   placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                  blurDataURL={BLUR_DATA_URL}
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 w-2/3 bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-[1.02]">
@@ -381,7 +382,7 @@ export default function Home() {
                   style={{ objectFit: "cover", opacity: 0.8 }}
                   className="transition-transform duration-500 group-hover:scale-110"
                   placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                  blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 flex items-end p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-white font-medium">{brand.name}</span>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
+import { BLUR_DATA_URL } from "@/lib/blur";
 
 export default function ContactPage() {
   return (
@@ -15,7 +16,7 @@ export default function ContactPage() {
             style={{ objectFit: "cover", opacity: 0.7 }}
             priority
             placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+            blurDataURL={BLUR_DATA_URL}
           />
         </div>
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
+import { BLUR_DATA_URL } from "@/lib/blur";
 
 // This would typically come from a database or API
 const getLeatherProduct = (id: string) => {
@@ -163,7 +164,7 @@ export default async function LeatherDetailPage({
                   style={{ objectFit: "cover" }}
                   priority
                   placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                  blurDataURL={BLUR_DATA_URL}
                 />
               </div>
 
@@ -179,7 +180,7 @@ export default async function LeatherDetailPage({
                       fill
                       style={{ objectFit: "cover" }}
                       placeholder="blur"
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                      blurDataURL={BLUR_DATA_URL}
                     />
                   </div>
                 ))}
@@ -318,7 +319,7 @@ export default async function LeatherDetailPage({
                         fill
                         style={{ objectFit: "cover" }}
                         placeholder="blur"
-                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
+                        blurDataURL={BLUR_DATA_URL}
                       />
                     </div>
                     <div className="p-4">
