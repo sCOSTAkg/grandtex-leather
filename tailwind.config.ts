@@ -120,43 +120,14 @@ export default {
   },
   plugins: [
     require("tailwindcss-animate"),
-    function({ addBase, addComponents }: any) {
+    function({ addBase }: any) {
       addBase({
         '.animate-fade-in-scroll': {
           opacity: '0',
           transform: 'translateY(20px)',
           transition: 'opacity 0.8s ease-in-out, transform 0.8s ease-in-out',
-        }
+        },
       });
-
-      // Add JS to trigger the animation when element is in viewport
-      if (typeof window !== 'undefined') {
-        addComponents({
-          '@global': {
-            'script': {
-              innerHTML: `
-                document.addEventListener('DOMContentLoaded', function() {
-                  const fadeElements = document.querySelectorAll('.animate-fade-in-scroll');
-
-                  const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                      if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                      }
-                    });
-                  }, { threshold: 0.1 });
-
-                  fadeElements.forEach(element => {
-                    observer.observe(element);
-                  });
-                });
-              `
-            }
-          }
-        });
-      }
-    }
+    },
   ],
 } satisfies Config;

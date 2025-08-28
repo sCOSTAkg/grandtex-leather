@@ -1,13 +1,16 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { initScrollAnimations, initParallaxEffect, initProductHoverEffects } from '@/lib/animate';
+import { useEffect } from "react";
+import {
+  useScrollFadeIn,
+  initParallaxEffect,
+  initProductHoverEffects,
+} from "@/lib/animate";
 
 export default function Animations() {
-  useEffect(() => {
-    // Initialize all animations
-    initScrollAnimations();
+  useScrollFadeIn();
 
+  useEffect(() => {
     // Initialize parallax effects
     const cleanupParallax = initParallaxEffect();
 
