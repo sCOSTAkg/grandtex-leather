@@ -22,7 +22,11 @@ export default function Header({ transparent = false }) {
   }, []);
 
   const headerClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    transparent && !isScrolled ? "bg-transparent" : "bg-background shadow-sm"
+    transparent && !isScrolled ? "bg-transparent" : "bg-background"
+  } ${
+    isScrolled
+      ? "mx-auto w-max rounded-full backdrop-blur shadow-md"
+      : "shadow-sm"
   }`;
 
   const textClasses =
@@ -170,31 +174,31 @@ export default function Header({ transparent = false }) {
 
               <div className="flex-1 overflow-y-auto p-6">
                 <div className="grid grid-cols-1 gap-4">
-                  {(navLinks[activeIndex].subLinks ?? [navLinks[activeIndex]]).map(
-                    (item) => (
-                      <Link
-                        key={item.title}
-                        href={item.href}
-                        className="relative h-32 rounded-xl overflow-hidden block"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {(item.image || navLinks[activeIndex].image) && (
-                          <Image
-                            src={item.image ?? navLinks[activeIndex].image!}
-                            alt={item.title}
-                            fill
-                            style={{ objectFit: "cover" }}
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 p-4 flex flex-col justify-between">
-                          <span className="text-primary-foreground text-lg font-medium">
-                            {item.title}
-                          </span>
-                          <ArrowRight className="self-end h-5 w-5 text-primary-foreground" />
-                        </div>
-                      </Link>
-                    )
-                  )}
+                  {(
+                    navLinks[activeIndex].subLinks ?? [navLinks[activeIndex]]
+                  ).map((item) => (
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      className="relative h-32 rounded-xl overflow-hidden block"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {(item.image || navLinks[activeIndex].image) && (
+                        <Image
+                          src={item.image ?? navLinks[activeIndex].image!}
+                          alt={item.title}
+                          fill
+                          style={{ objectFit: "cover" }}
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 p-4 flex flex-col justify-between">
+                        <span className="text-primary-foreground text-lg font-medium">
+                          {item.title}
+                        </span>
+                        <ArrowRight className="self-end h-5 w-5 text-primary-foreground" />
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </SheetContent>
