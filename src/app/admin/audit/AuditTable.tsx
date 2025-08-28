@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { AuditEntry } from "./page";
+import type { AuditEntry } from "./actions";
 
 interface Props {
   initialEntries: AuditEntry[];
