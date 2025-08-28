@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Home() {
   const latestProducts = [
@@ -92,7 +93,7 @@ export default function Home() {
     <MainLayout transparentHeader={true}>
       {/* Hero Section */}
       <section className="relative w-full h-screen bg-black text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <AnimatedSection speed={0.3} className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/3414069527.jpeg"
             alt="Фоновая текстура кожи"
@@ -101,71 +102,75 @@ export default function Home() {
             priority
             className="animate-ken-burns"
           />
-        </div>
+        </AnimatedSection>
 
         {/* Hero Content */}
         <div className="relative z-10 px-8 pt-40 h-full flex flex-col justify-between pb-32">
-          <div className="animate-fade-in">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-2 animate-reveal">
+          <AnimatedSection>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-2">
               Ускоряйтесь <br />
               <span className="inline-block mt-2">вперёд.</span>
             </h1>
             <div className="mt-8 max-w-xl">
-              <p className="text-xl sm:text-2xl font-medium animate-reveal-delay">
+              <p className="text-xl sm:text-2xl font-medium">
                 Ваш партнёр по кожевенному
                 <br />
                 производству, ориентированный на будущее.
               </p>
             </div>
-          </div>
+          </AnimatedSection>
 
           {/* Navigation Cards */}
           <div className="w-full max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-              <Link
-                href="/about-grandtex"
-                className="relative h-40 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] group"
-              >
-                <Image
-                  src="https://ext.same-assets.com/1118492138/1723594169.jpeg"
-                  alt="О GRANDTEX"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                  <div>
-                    <span className="text-white font-medium text-xl mb-1 block">
-                      О GRANDTEX
-                    </span>
-                    <p className="text-gray-300 text-sm">
-                      Узнайте нашу историю, ценности и видение
-                    </p>
+              <AnimatedSection>
+                <Link
+                  href="/about-grandtex"
+                  className="relative h-40 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] group"
+                >
+                  <Image
+                    src="https://ext.same-assets.com/1118492138/1723594169.jpeg"
+                    alt="О GRANDTEX"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                    <div>
+                      <span className="text-white font-medium text-xl mb-1 block">
+                        О GRANDTEX
+                      </span>
+                      <p className="text-gray-300 text-sm">
+                        Узнайте нашу историю, ценности и видение
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-              <Link
-                href="/tanneries"
-                className="relative h-40 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] group"
-              >
-                <Image
-                  src="https://ext.same-assets.com/1118492138/3036160331.jpeg"
-                  alt="Наши кожевенные заводы"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                  <div>
-                    <span className="text-white font-medium text-xl mb-1 block">
-                      Наши кожевенные заводы
-                    </span>
-                    <p className="text-gray-300 text-sm">
-                      Ознакомьтесь с нашими передовыми производствами
-                    </p>
+                </Link>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <Link
+                  href="/tanneries"
+                  className="relative h-40 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] group"
+                >
+                  <Image
+                    src="https://ext.same-assets.com/1118492138/3036160331.jpeg"
+                    alt="Наши кожевенные заводы"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                    <div>
+                      <span className="text-white font-medium text-xl mb-1 block">
+                        Наши кожевенные заводы
+                      </span>
+                      <p className="text-gray-300 text-sm">
+                        Ознакомьтесь с нашими передовыми производствами
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </AnimatedSection>
             </div>
             <div className="mt-8 flex justify-center md:justify-start">
               <Link
@@ -199,62 +204,59 @@ export default function Home() {
       </section>
 
       {/* Leathers Section */}
-      <section className="w-full py-24 px-8 bg-white opacity-0 animate-fade-in-scroll">
+      <section className="w-full py-24 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 opacity-0 animate-fade-in-scroll">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Последняя коллекция</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Откройте нашу коллекцию Весна-Лето 27, включающую премиальные
               кожи, созданные для универсальности и высокой производительности.
             </p>
-          </div>
+          </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {latestProducts.map((product, index) => (
-              <Link
-                key={product.id}
-                href={`/leathers/${product.id}`}
-                className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-0 animate-fade-in-scroll"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
-                    {product.name}
-                  </h3>
-                  <p className="text-sm text-gray-500 mt-1">
-                    {product.collection}
-                  </p>
-                  <div className="mt-4 space-y-1">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Тип</span>
-                      <span className="text-sm">{product.type}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Отделка</span>
-                      <span className="text-sm">{product.finish}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-500">Обработка</span>
-                      <span className="text-sm">{product.treatment}</span>
+              <AnimatedSection key={product.id} delay={index * 0.15}>
+                <Link
+                  href={`/leathers/${product.id}`}
+                  className="group block bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      className="transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
+                      {product.name}
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-1">
+                      {product.collection}
+                    </p>
+                    <div className="mt-4 space-y-1">
+                      <div className="flex justify-between">
+                        <span className="text-sm text-gray-500">Тип</span>
+                        <span className="text-sm">{product.type}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm text-gray-500">Отделка</span>
+                        <span className="text-sm">{product.finish}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm text-gray-500">Обработка</span>
+                        <span className="text-sm">{product.treatment}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </AnimatedSection>
             ))}
           </div>
-          <div
-            className="mt-16 text-center opacity-0 animate-fade-in-scroll"
-            style={{ animationDelay: "600ms" }}
-          >
+          <AnimatedSection delay={0.6} className="mt-16 text-center">
             <p className="mb-8 text-gray-700 max-w-3xl mx-auto">
               От спортзала до офиса, коллекция SS27 отражает глубину и широту
               того, что GRANDTEX умеет лучше всего — создавать универсальные
@@ -269,7 +271,7 @@ export default function Home() {
             >
               Откройте коллекцию
             </Link>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
