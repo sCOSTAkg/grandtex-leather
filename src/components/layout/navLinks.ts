@@ -20,31 +20,10 @@ export interface NavLink {
  * sub-links as your application grows.
  */
 export const defaultNavLinks: NavLink[] = [
-  {
-    title: 'Услуги',
-    href: '/services',
-  },
-  {
-    title: 'О нас',
-    href: '/about',
-  },
-  {
-    title: 'Портфолио',
-    href: '/portfolio',
-  },
-  {
-    title: 'Производство',
-    href: '/production',
-    subLinks: [
-      { title: 'Мужская одежда', href: '/production/mens' },
-      { title: 'Женская одежда', href: '/production/womens' },
-      { title: 'Деловая одежда', href: '/production/business' },
-      { title: 'Спортивная одежда', href: '/production/sports' },
-      { title: 'Детская одежда', href: '/production/kids' },
-    ],
-  },
-  {
-    title: 'Контакты',
-    href: '/contact',
-  },
+  { title: "Leathers", href: "/leathers" },
+  { title: "Why GRANDTEX", href: "/why-grandtex" },
+  { title: "Sustainability", href: "/sustainability" },
+  { title: "Tanneries", href: "/tanneries" },
+  { title: "Highlights", href: "/highlights" },
+  { title: "Contact", href: "/contact" },
 ];

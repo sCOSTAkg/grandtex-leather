@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { defaultNavLinks, NavLink } from './navLinks';
@@ -19,9 +19,24 @@ interface HeaderProps {
   links?: NavLink[];
 }
 
+const headerClasses =
+  "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent";
+const textClasses = "text-foreground";
+
 export default function Header({ links }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const navLinks = links ?? defaultNavLinks;
+
+  useEffect(() => {
+    const onScroll = () => {
+      document
+        .querySelector("header")
+        ?.setAttribute("data-scrolled", window.scrollY > 20 ? "true" : "false");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   /**
    * Renders a list of links recursively. If a link contains subLinks, they
@@ -45,18 +60,23 @@ export default function Header({ links }: HeaderProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur border-b border-border">
-      <nav className="container flex items-center justify-between py-4">
+    <header
+      className={
+        headerClasses +
+        " data-[scrolled=true]:backdrop-blur data-[scrolled=true]:bg-background/70"
+      }
+    >
+      <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="font-bold text-xl text-primary">
           GRANDTEX
         </Link>
         {/* Desktop navigation */}
-        <div className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8">
           {navLinks.map((item) => (
             <div key={item.title} className="group relative">
               <Link
                 href={item.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className={`${textClasses} text-sm font-medium hover:text-primary transition-colors`}
               >
                 {item.title}
               </Link>
@@ -67,7 +87,7 @@ export default function Header({ links }: HeaderProps) {
                       <Link
                         key={sub.title}
                         href={sub.href}
-                        className="block text-sm text-foreground hover:text-primary"
+                        className={`${textClasses} block text-sm hover:text-primary`}
                       >
                         {sub.title}
                       </Link>
@@ -77,19 +97,22 @@ export default function Header({ links }: HeaderProps) {
               )}
             </div>
           ))}
-        </div>
+        </nav>
         {/* Mobile menu toggle */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className={`md:hidden p-2 ${textClasses}`}
           onClick={() => setOpen((prev) => !prev)}
           aria-label={open ? 'Close menu' : 'Open menu'}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
-      </nav>
+      </div>
       {/* Mobile drawer */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-40 bg-black/50" onClick={() => setOpen(false)}>
+        <div
+          className="md:hidden fixed inset-0 z-40 bg-black/50"
+          onClick={() => setOpen(false)}
+        >
           <div
             className="absolute right-0 top-0 h-full w-64 bg-background p-6 shadow-lg overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
