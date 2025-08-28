@@ -13,19 +13,16 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | GRANDTEX Leather",
-    default:
-      "GRANDTEX | Ваш партнёр по кожевенному производству, ориентированный на будущее",
+    template: "%s | GRANDTEX",
+    default: "GRANDTEX | Производство одежды под ключ",
   },
   description:
-    "GRANDTEX — ваш партнёр по высококачественным кожаным продуктам, уделяющий внимание устойчивости и инновационным решениям для мировых брендов.",
+    "GRANDTEX обеспечивает полный цикл пошива одежды: от разработки лекал до упаковки готовой партии.",
   keywords: [
-    "кожа",
-    "кожевенный завод",
-    "устойчивая кожа",
-    "кожа для обуви",
-    "премиальная кожа",
-    "производство кожи",
+    "пошив одежды",
+    "разработка лекал",
+    "серийное производство",
+    "швейное производство",
   ],
   authors: [{ name: "GRANDTEX" }],
   creator: "GRANDTEX",
@@ -35,32 +32,30 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://grandtex-leather.netlify.app"),
+  metadataBase: new URL("https://v0-grandioooooss.vercel.app"),
   openGraph: {
-    title:
-      "GRANDTEX | Ваш партнёр по кожевенному производству, ориентированный на будущее",
+    title: "GRANDTEX | Производство одежды под ключ",
     description:
-      "GRANDTEX — ваш партнёр по высококачественным кожаным продуктам, уделяющий внимание устойчивости и инновационным решениям для мировых брендов.",
-    url: "https://grandtex-leather.netlify.app",
-    siteName: "GRANDTEX Leather",
+      "Полный цикл – от лекал до готовой партии. Точные лекала, современное оборудование и трёхуровневый контроль качества.",
+    url: "https://v0-grandioooooss.vercel.app",
+    siteName: "GRANDTEX",
     locale: "ru_RU",
     type: "website",
     images: [
       {
-        url: "https://ext.same-assets.com/1118492138/3414069527.jpeg",
+        url: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
         width: 1200,
         height: 630,
-        alt: "GRANDTEX Leather",
+        alt: "GRANDTEX",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "GRANDTEX | Ваш партнёр по кожевенному производству, ориентированный на будущее",
+    title: "GRANDTEX | Производство одежды под ключ",
     description:
-      "GRANDTEX — ваш партнёр по высококачественным кожаным продуктам, уделяющий внимание устойчивости и инновационным решениям для мировых брендов.",
-    images: ["https://ext.same-assets.com/1118492138/3414069527.jpeg"],
+      "Полный цикл – от лекал до готовой партии. Точные лекала, современное оборудование и трёхуровневый контроль качества.",
+    images: ["https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"],
   },
   icons: {
     icon: "/favicon.ico",
