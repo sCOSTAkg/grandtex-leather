@@ -4,14 +4,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { usePathname } from "next/navigation";
-import AnimatedSection from "@/components/AnimatedSection";
 import ThemeToggle from "@/components/ThemeToggle";
+import { Search, Plus, ArrowRight } from "lucide-react";
 
 export default function Header({ transparent = false }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,9 +25,15 @@ export default function Header({ transparent = false }) {
     transparent && !isScrolled ? "bg-transparent" : "bg-background shadow-sm"
   }`;
 
-  const textClasses = transparent && !isScrolled ? "text-primary-foreground" : "text-foreground";
+  const textClasses =
+    transparent && !isScrolled ? "text-primary-foreground" : "text-foreground";
 
-  const navLinks = [
+  const navLinks: {
+    title: string;
+    href: string;
+    image?: string;
+    subLinks?: { title: string; href: string; image?: string }[];
+  }[] = [
     {
       title: "Кожа",
       href: "/leathers",
@@ -107,151 +112,92 @@ export default function Header({ transparent = false }) {
 
   return (
     <header className={headerClasses}>
-      <div className="flex justify-between items-center w-full px-8 py-6">
+      <div className="flex items-center justify-between w-full px-4 py-4">
+        {/* Search */}
+        <Sheet>
+          <SheetTrigger asChild>
+            <button className={`${textClasses} p-2`}>
+              <Search className="h-5 w-5" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="top" className="h-[60vh] p-6">
+            <div className="flex items-center gap-2">
+              <Search className="h-5 w-5 text-muted-foreground" />
+              <input
+                type="text"
+                placeholder="Поиск по коже"
+                className="flex-1 bg-transparent border-b border-muted-foreground/20 pb-1 outline-none"
+              />
+            </div>
+          </SheetContent>
+        </Sheet>
+
+        {/* Logo */}
         <Link
           href="/"
-          className={`text-3xl font-bold transition-colors duration-300 ${textClasses}`}
+          className={`text-2xl font-bold transition-colors duration-300 ${textClasses}`}
         >
           GRANDTEX
         </Link>
 
-        <div className="flex items-center space-x-4">
-          <ThemeToggle className={textClasses} />
-          <Sheet>
+        <div className="flex items-center gap-3">
+          <ThemeToggle className={`hidden md:block ${textClasses}`} />
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <button
-                className={`flex items-center space-x-2 transition-colors duration-300 ${textClasses} hover:opacity-75`}
-                onClick={() => setIsMenuOpen(true)}
-              >
-                <span>Меню</span>
+              <button className={`${textClasses} p-2`}>
+                <Plus className="h-6 w-6" />
               </button>
             </SheetTrigger>
             <SheetContent
-              side="right"
-              className="w-full sm:max-w-md md:max-w-lg lg:max-w-xl p-0 overflow-y-auto"
+              side="bottom"
+              className="h-[80vh] p-0 flex flex-col overflow-hidden"
             >
-            <AnimatedSection className="h-full flex flex-col">
-              <div className="flex justify-between items-center px-8 py-6 border-b">
-                <Link href="/" className="text-3xl font-bold">
-                  grandtex
-                </Link>
-                <button
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Закрыть
-                </button>
-              </div>
-
-              <div className="flex-1 overflow-auto px-8 py-10">
-                <nav className="space-y-12">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {navLinks.slice(0, 4).map((link, index) => (
-                      <AnimatedSection
-                        key={link.title}
-                        delay={index * 0.1}
-                        className="space-y-4"
-                      >
-                        <Link
-                          href={link.href}
-                          className="flex items-center space-x-2 text-lg font-medium hover:text-accent transition-colors"
-                        >
-                          <span>{link.title}</span>
-                        </Link>
-
-                        {link.subLinks && (
-                          <ul className="space-y-2 ml-4">
-                            {link.subLinks.map((subLink) => (
-                              <li key={subLink.title}>
-                                <Link
-                                  href={subLink.href}
-                                  className={`text-muted-foreground hover:text-foreground transition-colors ${
-                                    pathname === subLink.href
-                                      ? "font-medium text-foreground"
-                                      : ""
-                                  }`}
-                                >
-                                  {subLink.title}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-
-                        {link.image && (
-                          <div className="relative h-32 rounded-md overflow-hidden mt-4 group">
-                            <Image
-                              src={link.image}
-                              alt={link.title}
-                              fill
-                              style={{ objectFit: "cover" }}
-                              className="transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-primary bg-opacity-30 flex items-end p-4">
-                              <span className="text-primary-foreground font-medium">
-                                {link.title}
-                              </span>
-                            </div>
-                          </div>
-                        )}
-                      </AnimatedSection>
-                    ))}
-                  </div>
-
-                  <AnimatedSection delay={0.4} className="space-y-4">
-                    <h2 className="text-lg font-medium">
-                      Дополнительная информация
-                    </h2>
-                    <ul className="grid grid-cols-2 gap-y-2 gap-x-4">
-                      {navLinks.slice(4).map((link) => (
-                        <li key={link.title}>
-                          <Link
-                            href={link.href}
-                            className={`text-muted-foreground hover:text-foreground transition-colors ${
-                              pathname === link.href
-                                ? "font-medium text-foreground"
-                                : ""
-                            }`}
-                          >
-                            {link.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </AnimatedSection>
-                </nav>
-              </div>
-
-              <div className="p-8 border-t">
-                <div className="flex items-center justify-between">
-                  <div className="flex space-x-4">
-                    <Link
-                      href="https://www.linkedin.com"
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      LinkedIn
-                    </Link>
-                    <Link
-                      href="https://www.instagram.com"
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Instagram
-                    </Link>
-                  </div>
-                  <Link
-                    href="/contact"
-                    className="px-6 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/80 transition-colors"
+              <div className="flex gap-4 overflow-x-auto p-4 border-b">
+                {navLinks.map((link, index) => (
+                  <button
+                    key={link.title}
+                    onClick={() => setActiveIndex(index)}
+                    className={`whitespace-nowrap ${
+                      activeIndex === index
+                        ? "text-foreground font-medium"
+                        : "text-muted-foreground"
+                    }`}
                   >
-                    Контакты
-                  </Link>
+                    {link.title}
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex-1 overflow-y-auto p-6">
+                <div className="grid grid-cols-1 gap-4">
+                  {(navLinks[activeIndex].subLinks ?? [navLinks[activeIndex]]).map(
+                    (item) => (
+                      <Link
+                        key={item.title}
+                        href={item.href}
+                        className="relative h-32 rounded-xl overflow-hidden block"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {(item.image || navLinks[activeIndex].image) && (
+                          <Image
+                            src={item.image ?? navLinks[activeIndex].image!}
+                            alt={item.title}
+                            fill
+                            style={{ objectFit: "cover" }}
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 p-4 flex flex-col justify-between">
+                          <span className="text-primary-foreground text-lg font-medium">
+                            {item.title}
+                          </span>
+                          <ArrowRight className="self-end h-5 w-5 text-primary-foreground" />
+                        </div>
+                      </Link>
+                    )
+                  )}
                 </div>
               </div>
-            </AnimatedSection>
-          </SheetContent>
+            </SheetContent>
           </Sheet>
         </div>
       </div>
