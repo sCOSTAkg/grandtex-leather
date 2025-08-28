@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import ThemeToggle from "@/components/ThemeToggle";
 import { Search, Plus, ArrowRight } from "lucide-react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 import { defaultNavLinks } from "./navLinks";
 
@@ -26,33 +27,46 @@ interface HeaderProps {
 }
 export default function Header({ config }: HeaderProps) {
   const { transparent, links } = config;
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [phase, setPhase] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const headerClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    transparent && !isScrolled ? "bg-transparent" : "bg-background"
-  } ${
-    isScrolled
-      ? "mx-auto w-max rounded-full backdrop-blur shadow-md"
-      : "shadow-sm"
-  }`;
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < 200) setPhase(0);
+    else if (latest < 400) setPhase(1);
+    else setPhase(2);
+  });
 
   const textClasses =
-    transparent && !isScrolled ? "text-primary-foreground" : "text-foreground";
+    transparent && phase === 0 ? "text-primary-foreground" : "text-foreground";
   const navLinks = links ?? defaultNavLinks;
 
   return (
-    <header className={headerClasses}>
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50"
+      animate={`${phase}`}
+      variants={{
+        "0": {
+          backgroundColor: transparent ? "rgba(0,0,0,0)" : "var(--background)",
+          boxShadow: "0 0 0 0 rgba(0,0,0,0)",
+        },
+        "1": {
+          backgroundColor: "var(--background)",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+        },
+        "2": {
+          backgroundColor: "var(--background)",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+          borderRadius: "9999px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "max-content",
+          backdropFilter: "blur(8px)",
+        },
+      }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="flex items-center justify-between w-full px-4 py-4">
         {/* Search */}
         <Sheet>
@@ -142,6 +156,6 @@ export default function Header({ config }: HeaderProps) {
           </Sheet>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

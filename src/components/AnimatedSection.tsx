@@ -17,6 +17,17 @@ interface AnimatedSectionProps {
    * Delay for the initial reveal animation in seconds.
    */
   delay?: number;
+  /**
+   * Mapping of animation properties to start/end values based on scroll
+   * progress. Each property is interpolated from 0 → 1 scroll range.
+   */
+  progressEffects?: {
+    scale?: [number, number];
+    rotate?: [number, number];
+    opacity?: [number, number];
+    x?: [number, number];
+    y?: [number, number];
+  };
 }
 
 /**
@@ -28,6 +39,7 @@ export default function AnimatedSection({
   className = "",
   speed = 0,
   delay = 0,
+  progressEffects,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -37,13 +49,51 @@ export default function AnimatedSection({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [speed * 50, speed * -50]);
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [
+    speed * 50,
+    speed * -50,
+  ]);
+
+  // Scroll‑progress driven transforms (called unconditionally)
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 1],
+    progressEffects?.scale ?? [1, 1],
+  );
+  const rotate = useTransform(
+    scrollYProgress,
+    [0, 1],
+    progressEffects?.rotate ?? [0, 0],
+  );
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 1],
+    progressEffects?.opacity ?? [1, 1],
+  );
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    progressEffects?.x ?? [0, 0],
+  );
+  const progY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    progressEffects?.y ?? [0, 0],
+  );
+
+  const style: Record<string, unknown> = {};
+  if (speed && !progY) style.y = parallaxY;
+  if (scale) style.scale = scale;
+  if (rotate) style.rotate = rotate;
+  if (opacity) style.opacity = opacity;
+  if (x) style.x = x;
+  if (progY) style.y = progY;
 
   return (
     <motion.div
       ref={ref}
       className={className}
-      style={speed ? { y } : undefined}
+      style={Object.keys(style).length ? style : undefined}
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : undefined}
       transition={{ duration: 0.6, delay }}

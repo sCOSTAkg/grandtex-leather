@@ -96,3 +96,7 @@ export const initProductHoverEffects = () => {
     });
   });
 };
+
+// Placeholder for scroll-progress driven animations handled in React components.
+// Keeping function for API parity so Animations component can initialize it.
+export const initProgressAnimations = () => {};

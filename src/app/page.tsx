@@ -3,6 +3,8 @@ import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
 import AnimatedSection from "@/components/AnimatedSection";
 import LetterLoader from "@/components/LetterLoader";
+import HorizontalScrollSection from "@/components/HorizontalScrollSection";
+import OverlappingCards from "@/components/OverlappingCards";
 
 export default function Home() {
   const latestProducts = [
@@ -111,7 +113,7 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-10 px-8 pt-40 h-full flex flex-col justify-between pb-32">
-          <AnimatedSection>
+          <AnimatedSection progressEffects={{ scale: [1, 0.9], y: [0, -100] }}>
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-2">
               Ускоряйтесь <br />
               <span className="inline-block mt-2">вперёд.</span>
@@ -219,48 +221,47 @@ export default function Home() {
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {latestProducts.map((product, index) => (
-              <AnimatedSection key={product.id} delay={index * 0.15}>
-                <Link
-                  href={`/leathers/${product.id}`}
-                  className="group block bg-background border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      className="transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
-                      {product.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {product.collection}
-                    </p>
-                    <div className="mt-4 space-y-1">
-                      <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">Тип</span>
-                        <span className="text-sm">{product.type}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">Отделка</span>
-                        <span className="text-sm">{product.finish}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-sm text-muted-foreground">Обработка</span>
-                        <span className="text-sm">{product.treatment}</span>
+          <HorizontalScrollSection>
+            <OverlappingCards>
+              {latestProducts.map((product, index) => (
+                <AnimatedSection key={product.id} delay={index * 0.15}>
+                  <Link href={`/leathers/${product.id}`} className="block h-full group">
+                    <div className="relative aspect-square overflow-hidden">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className="transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
+                        {product.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {product.collection}
+                      </p>
+                      <div className="mt-4 space-y-1">
+                        <div className="flex justify-between">
+                          <span className="text-sm text-muted-foreground">Тип</span>
+                          <span className="text-sm">{product.type}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-sm text-muted-foreground">Отделка</span>
+                          <span className="text-sm">{product.finish}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-sm text-muted-foreground">Обработка</span>
+                          <span className="text-sm">{product.treatment}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </AnimatedSection>
-            ))}
-          </div>
+                  </Link>
+                </AnimatedSection>
+              ))}
+            </OverlappingCards>
+          </HorizontalScrollSection>
           <AnimatedSection delay={0.6} className="mt-16 text-center">
             <p className="mb-8 text-muted-foreground max-w-3xl mx-auto">
               От спортзала до офиса, коллекция SS27 отражает глубину и широту

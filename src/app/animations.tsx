@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { initScrollAnimations, initParallaxEffect, initProductHoverEffects } from '@/lib/animate';
+import { initScrollAnimations, initParallaxEffect, initProductHoverEffects, initProgressAnimations } from '@/lib/animate';
 
 export default function Animations() {
   useEffect(() => {
@@ -13,6 +13,7 @@ export default function Animations() {
 
     // Initialize product hover effects
     initProductHoverEffects();
+    initProgressAnimations();
 
     // Cleanup on unmount
     return () => {
