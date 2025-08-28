@@ -92,13 +92,13 @@ export default function Home() {
   return (
     <MainLayout transparentHeader={true}>
       {/* Hero Section */}
-      <section className="relative w-full h-screen bg-black text-white overflow-hidden">
+      <section className="relative w-full h-screen bg-white text-gray-900 overflow-hidden">
         <AnimatedSection speed={0.3} className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/3414069527.jpeg"
             alt="Фоновая текстура кожи"
             fill
-            style={{ objectFit: "cover", opacity: 0.7 }}
+            style={{ objectFit: "cover", opacity: 0.2 }}
             priority
             className="animate-ken-burns"
           />
@@ -135,12 +135,12 @@ export default function Home() {
                     style={{ objectFit: "cover" }}
                     className="transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent flex items-end p-6">
                     <div>
-                      <span className="text-white font-medium text-xl mb-1 block">
+                      <span className="text-gray-900 font-medium text-xl mb-1 block">
                         О GRANDTEX
                       </span>
-                      <p className="text-gray-300 text-sm">
+                      <p className="text-gray-700 text-sm">
                         Узнайте нашу историю, ценности и видение
                       </p>
                     </div>
@@ -159,12 +159,12 @@ export default function Home() {
                     style={{ objectFit: "cover" }}
                     className="transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent flex items-end p-6">
                     <div>
-                      <span className="text-white font-medium text-xl mb-1 block">
+                      <span className="text-gray-900 font-medium text-xl mb-1 block">
                         Наши кожевенные заводы
                       </span>
-                      <p className="text-gray-300 text-sm">
+                      <p className="text-gray-700 text-sm">
                         Ознакомьтесь с нашими передовыми производствами
                       </p>
                     </div>
@@ -175,7 +175,7 @@ export default function Home() {
             <div className="mt-8 flex justify-center md:justify-start">
               <Link
                 href="/leathers"
-                className="px-8 py-3 border border-white text-white rounded-full inline-block hover:bg-white hover:text-black transition-colors duration-300"
+                className="px-8 py-3 border border-black text-black rounded-full inline-block hover:bg-black hover:text-white transition-colors duration-300"
               >
                 Исследуйте наши кожи
               </Link>
@@ -194,7 +194,7 @@ export default function Home() {
           >
             <path
               d="M12 5V19M12 19L5 12M12 19L19 12"
-              stroke="white"
+              stroke="black"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
