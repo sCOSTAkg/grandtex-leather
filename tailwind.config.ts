@@ -51,10 +51,15 @@ const config: Config = {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'fade-in': 'fade-in 1s ease forwards',
         'fade-up': 'fade-up 0.6s ease forwards',
+        marquee: 'marquee 20s linear infinite',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -76,3 +81,4 @@ const config: Config = {
 };
 
 export default config;
+

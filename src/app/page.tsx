@@ -1,12 +1,17 @@
 import HeroPrime from "@/components/HeroPrime";
 import LeatherCard from "@/components/LeatherCard";
+import AnimatedSection from "@/components/AnimatedSection";
+import SustainabilityPillars from "@/components/SustainabilityPillars";
+import LogoMarquee from "@/components/LogoMarquee";
+import Highlights from "@/components/Highlights";
+import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
     <>
       <HeroPrime />
-      {/* Leathers preview */}
-      <section className="bg-background">
+
+      <AnimatedSection className="bg-background">
         <div className="container py-20">
           <h2 className="text-3xl md:text-4xl font-semibold">Leathers</h2>
           <p className="mt-3 text-muted-foreground max-w-2xl">
@@ -39,43 +44,13 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* Sustainability */}
-      <section className="bg-secondary">
-        <div className="container py-20">
-          <h2 className="text-3xl md:text-4xl font-semibold">Sustainability</h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl">
-            Consciously Crafted strategy across four pillars: Operational Excellence, Circularity, Climate Action, Social Impact.
-          </p>
-          {/* TODO: 4 колонки с пиларами */}
-        </div>
-      </section>
-
-      {/* Brands */}
-      <section>
-        <div className="container py-16">
-          <h3 className="text-xl text-muted-foreground">Trusted by</h3>
-          {/* TODO: лого-маркиза Adidas, Nike, Puma, etc. */}
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="bg-secondary">
-        <div className="container py-16">
-          <h2 className="text-3xl md:text-4xl font-semibold">Highlights</h2>
-          {/* TODO: 3 карточки с последними постами/новостями */}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section>
-        <div className="container py-20 text-center">
-          <a href="/contact" className="inline-flex px-6 py-4 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition">
-            Contact us
-          </a>
-        </div>
-      </section>
+      <SustainabilityPillars />
+      <LogoMarquee />
+      <Highlights />
+      <CTA />
     </>
   );
 }
+
