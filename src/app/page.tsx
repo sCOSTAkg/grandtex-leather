@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
 import AnimatedSection from "@/components/AnimatedSection";
+import LetterLoader from "@/components/LetterLoader";
 
 export default function Home() {
   const latestProducts = [
@@ -91,6 +92,10 @@ export default function Home() {
 
   return (
     <MainLayout transparentHeader={true}>
+      <LetterLoader
+        text="Grandtex Leather"
+        className="mt-8 text-center text-4xl font-bold"
+      />
       {/* Hero Section */}
       <section className="relative w-full h-screen bg-background text-foreground overflow-hidden">
         <AnimatedSection speed={0.3} className="absolute inset-0 z-0">

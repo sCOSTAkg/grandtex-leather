@@ -83,6 +83,16 @@ export default {
         "pulse-subtle": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.8" }
+        },
+        "letter-reveal": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(0.5rem)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
         }
       },
       animation: {
@@ -93,6 +103,7 @@ export default {
         "reveal-delay": "reveal 0.7s ease-in-out 0.3s forwards",
         "float": "float 6s ease-in-out infinite",
         "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",
+        "letter-reveal": "letter-reveal 0.3s ease forwards",
       },
       borderRadius: {
         lg: 'var(--radius)',
