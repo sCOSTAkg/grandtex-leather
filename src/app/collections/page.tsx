@@ -57,6 +57,8 @@ export default function CollectionsPage() {
             fill
             style={{ objectFit: "cover", opacity: 0.7 }}
             priority
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
           />
         </div>
 
@@ -82,6 +84,8 @@ export default function CollectionsPage() {
                   alt={collections[0].title}
                   fill
                   style={{ objectFit: "cover" }}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                 />
               </div>
             </div>
@@ -132,6 +136,8 @@ export default function CollectionsPage() {
                     alt={collection.title}
                     fill
                     style={{ objectFit: "cover" }}
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                   />
                 </div>
                 <div className="p-6">

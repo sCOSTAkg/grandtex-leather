@@ -59,6 +59,8 @@ export default function TanneriesPage() {
             fill
             style={{ objectFit: "cover", opacity: 0.7 }}
             priority
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
           />
         </div>
 
@@ -190,6 +192,8 @@ export default function TanneriesPage() {
                     alt={tannery.name}
                     fill
                     style={{ objectFit: "cover" }}
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                   />
                 </div>
 
@@ -204,6 +208,8 @@ export default function TanneriesPage() {
                         alt={`${tannery.name} view ${i + 2}`}
                         fill
                         style={{ objectFit: "cover" }}
+                        placeholder="blur"
+                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                       />
                     </div>
                   ))}

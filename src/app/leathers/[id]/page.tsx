@@ -162,6 +162,8 @@ export default async function LeatherDetailPage({
                   fill
                   style={{ objectFit: "cover" }}
                   priority
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                 />
               </div>
 
@@ -176,6 +178,8 @@ export default async function LeatherDetailPage({
                       alt={`${product.name} view ${index + 2}`}
                       fill
                       style={{ objectFit: "cover" }}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                     />
                   </div>
                 ))}
@@ -313,6 +317,8 @@ export default async function LeatherDetailPage({
                         alt={relatedProduct.name}
                         fill
                         style={{ objectFit: "cover" }}
+                        placeholder="blur"
+                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                       />
                     </div>
                     <div className="p-4">

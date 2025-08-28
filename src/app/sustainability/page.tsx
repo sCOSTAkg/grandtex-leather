@@ -14,6 +14,8 @@ export default function SustainabilityPage() {
             fill
             style={{ objectFit: "cover", opacity: 0.7 }}
             priority
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
           />
         </div>
 
@@ -87,6 +89,8 @@ export default function SustainabilityPage() {
                 alt="Операционное совершенство"
                 fill
                 style={{ objectFit: "cover" }}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
               />
             </div>
           </div>
@@ -104,6 +108,8 @@ export default function SustainabilityPage() {
                 alt="Циркулярность"
                 fill
                 style={{ objectFit: "cover" }}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
               />
             </div>
 
@@ -168,6 +174,8 @@ export default function SustainabilityPage() {
                 alt="Климатические действия"
                 fill
                 style={{ objectFit: "cover" }}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
               />
             </div>
           </div>
@@ -185,6 +193,8 @@ export default function SustainabilityPage() {
                 alt="Социальное воздействие"
                 fill
                 style={{ objectFit: "cover" }}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
               />
             </div>
 

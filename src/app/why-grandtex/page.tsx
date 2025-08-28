@@ -53,6 +53,8 @@ export default function WhyGrandtexPage() {
             fill
             style={{ objectFit: "cover", opacity: 0.7 }}
             priority
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
           />
         </div>
 
@@ -156,6 +158,8 @@ export default function WhyGrandtexPage() {
                   alt="GRANDTEX Expert Team"
                   fill
                   style={{ objectFit: "cover" }}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                 />
               </div>
             </div>
@@ -174,6 +178,8 @@ export default function WhyGrandtexPage() {
                   alt="GRANDTEX Technology"
                   fill
                   style={{ objectFit: "cover" }}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HwAFgwJ/lK1gnwAAAABJRU5ErkJggg=="
                 />
               </div>
             </div>
