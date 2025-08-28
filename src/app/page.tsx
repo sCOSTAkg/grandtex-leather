@@ -1,89 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import MainLayout from '@/components/layout/MainLayout';
+import Image from "next/image";
+import Link from "next/link";
+import MainLayout from "@/components/layout/MainLayout";
+import {
+  latestProducts,
+  featuredBrands,
+  sustainabilityPillars,
+} from "@/data/home";
 
 export default function Home() {
-  const latestProducts = [
-    {
-      id: 'opulent',
-      name: 'Opulent',
-      collection: 'Spring-Summer 27',
-      type: 'Grain',
-      finish: 'Naturally Tumbled',
-      treatment: 'Semi-Aniline',
-      image: 'https://ext.same-assets.com/1118492138/331861169.jpeg',
-    },
-    {
-      id: 'papyrus',
-      name: 'Papyrus',
-      collection: 'Spring-Summer 27',
-      type: 'Grain',
-      finish: 'Naturally Tumbled',
-      treatment: 'Specialty',
-      image: 'https://ext.same-assets.com/1118492138/3988412587.jpeg',
-    },
-    {
-      id: 'boho',
-      name: 'Boho',
-      collection: 'Spring-Summer 27',
-      type: 'Grain',
-      finish: 'Embossed',
-      treatment: 'Aniline',
-      image: 'https://ext.same-assets.com/1118492138/3513175735.jpeg',
-    },
-    {
-      id: 'sterling',
-      name: 'Sterling',
-      collection: 'Spring-Summer 27',
-      type: 'Grain',
-      finish: 'Smooth',
-      treatment: 'Aniline',
-      image: 'https://ext.same-assets.com/1118492138/3442149313.jpeg',
-    },
-  ];
-
-  const featuredBrands = [
-    {
-      name: 'Adidas',
-      logo: 'https://ext.same-assets.com/1118492138/542915801.jpeg'
-    },
-    {
-      name: 'Camper',
-      logo: 'https://ext.same-assets.com/1118492138/1400919951.jpeg'
-    },
-    {
-      name: 'Carhartt',
-      logo: 'https://ext.same-assets.com/1118492138/3272561453.jpeg'
-    },
-    {
-      name: 'Nike',
-      logo: 'https://ext.same-assets.com/1118492138/271436679.jpeg'
-    },
-    {
-      name: 'Clarks',
-      logo: 'https://ext.same-assets.com/1118492138/68077734.jpeg'
-    },
-  ];
-
-  const sustainabilityPillars = [
-    {
-      title: "Operational Excellence",
-      description: "Optimizing our processes to reduce waste and resource consumption."
-    },
-    {
-      title: "Circularity",
-      description: "Implementing circular economy principles in our product lifecycle."
-    },
-    {
-      title: "Climate Action",
-      description: "Reducing our carbon footprint and investing in renewable energy."
-    },
-    {
-      title: "Social Impact",
-      description: "Creating positive change in the communities where we operate."
-    }
-  ];
-
   return (
     <MainLayout transparentHeader={true}>
       {/* Hero Section */}
@@ -93,7 +17,7 @@ export default function Home() {
             src="https://ext.same-assets.com/1118492138/3414069527.jpeg"
             alt="Leather texture background"
             fill
-            style={{ objectFit: 'cover', opacity: 0.7 }}
+            style={{ objectFit: "cover", opacity: 0.7 }}
             priority
             className="animate-ken-burns"
           />
@@ -108,7 +32,8 @@ export default function Home() {
             </h1>
             <div className="mt-8 max-w-xl">
               <p className="text-xl sm:text-2xl font-medium animate-reveal-delay">
-                Your Future-Forward<br />
+                Your Future-Forward
+                <br />
                 Tannery Partner.
               </p>
             </div>
@@ -125,13 +50,17 @@ export default function Home() {
                   src="https://ext.same-assets.com/1118492138/1723594169.jpeg"
                   alt="About GRANDTEX"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                   className="transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div>
-                    <span className="text-white font-medium text-xl mb-1 block">About GRANDTEX</span>
-                    <p className="text-gray-300 text-sm">Discover our story, values, and vision</p>
+                    <span className="text-white font-medium text-xl mb-1 block">
+                      About GRANDTEX
+                    </span>
+                    <p className="text-gray-300 text-sm">
+                      Discover our story, values, and vision
+                    </p>
                   </div>
                 </div>
               </Link>
@@ -143,13 +72,17 @@ export default function Home() {
                   src="https://ext.same-assets.com/1118492138/3036160331.jpeg"
                   alt="Our Tanneries"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                   className="transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                   <div>
-                    <span className="text-white font-medium text-xl mb-1 block">Our Tanneries</span>
-                    <p className="text-gray-300 text-sm">Explore our state-of-the-art facilities</p>
+                    <span className="text-white font-medium text-xl mb-1 block">
+                      Our Tanneries
+                    </span>
+                    <p className="text-gray-300 text-sm">
+                      Explore our state-of-the-art facilities
+                    </p>
                   </div>
                 </div>
               </Link>
@@ -167,8 +100,20 @@ export default function Home() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 5V19M12 19L5 12M12 19L19 12"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </div>
       </section>
@@ -179,7 +124,8 @@ export default function Home() {
           <div className="text-center mb-16 opacity-0 animate-fade-in-scroll">
             <h2 className="text-4xl font-bold mb-4">Latest Collection</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our Spring-Summer 27 collection, featuring premium leathers designed for versatility and performance.
+              Discover our Spring-Summer 27 collection, featuring premium
+              leathers designed for versatility and performance.
             </p>
           </div>
 
@@ -196,13 +142,17 @@ export default function Home() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                     className="transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold group-hover:text-accent transition-colors">{product.name}</h3>
-                  <p className="text-sm text-gray-500 mt-1">{product.collection}</p>
+                  <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {product.collection}
+                  </p>
                   <div className="mt-4 space-y-1">
                     <div className="flex justify-between">
                       <span className="text-sm text-gray-500">Type</span>
@@ -221,9 +171,16 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="mt-16 text-center opacity-0 animate-fade-in-scroll" style={{ animationDelay: '600ms' }}>
+          <div
+            className="mt-16 text-center opacity-0 animate-fade-in-scroll"
+            style={{ animationDelay: "600ms" }}
+          >
             <p className="mb-8 text-gray-700 max-w-3xl mx-auto">
-              From court to commute, SS27 reflects the depth and range of what GRANDTEX does best—crafting versatile leathers that scale with your needs. As part of our rebrand, this season marks a renewed commitment to serving brands of every size with precision, purpose, and partnership.
+              From court to commute, SS27 reflects the depth and range of what
+              GRANDTEX does best—crafting versatile leathers that scale with
+              your needs. As part of our rebrand, this season marks a renewed
+              commitment to serving brands of every size with precision,
+              purpose, and partnership.
             </p>
             <Link
               href="/collections/spring-summer-2027"
@@ -242,7 +199,7 @@ export default function Home() {
             src="https://ext.same-assets.com/1118492138/180971912.jpeg"
             alt="Sustainability background"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: "cover" }}
           />
         </div>
 
@@ -251,7 +208,10 @@ export default function Home() {
             <div className="opacity-0 animate-fade-in-scroll">
               <h2 className="text-4xl font-bold mb-6">Sustainability</h2>
               <p className="text-lg text-gray-700 mb-8">
-                Sustainability has always been at the heart of GRANDTEX's business. We took our commitment further, setting targets under four pillars: Operational Excellence, Circularity, Climate Action, and Social Impact.
+                Sustainability has always been at the heart of GRANDTEX's
+                business. We took our commitment further, setting targets under
+                four pillars: Operational Excellence, Circularity, Climate
+                Action, and Social Impact.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -275,19 +235,24 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="relative opacity-0 animate-fade-in-scroll" style={{ animationDelay: '600ms' }}>
+            <div
+              className="relative opacity-0 animate-fade-in-scroll"
+              style={{ animationDelay: "600ms" }}
+            >
               <div className="aspect-[4/5] rounded-lg overflow-hidden">
                 <Image
                   src="https://ext.same-assets.com/1118492138/180971912.jpeg"
                   alt="Sustainability"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 w-2/3 bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-[1.02]">
                 <h3 className="text-xl font-bold mb-2">Our Commitment</h3>
                 <p className="text-gray-700">
-                  By 2030, we aim to reduce our water usage by 50%, achieve carbon neutrality, and ensure 100% of our leather waste is recycled or repurposed.
+                  By 2030, we aim to reduce our water usage by 50%, achieve
+                  carbon neutrality, and ensure 100% of our leather waste is
+                  recycled or repurposed.
                 </p>
               </div>
             </div>
@@ -299,9 +264,13 @@ export default function Home() {
       <section className="w-full py-24 px-8 bg-white opacity-0 animate-fade-in-scroll">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 opacity-0 animate-fade-in-scroll">
-            <h2 className="text-4xl font-bold mb-4">Trusted by Global Brands</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              Trusted by Global Brands
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We partner with brands of all sizes, combining world-class craftsmanship with personalized service to deliver exceptional leather products.
+              We partner with brands of all sizes, combining world-class
+              craftsmanship with personalized service to deliver exceptional
+              leather products.
             </p>
           </div>
 
@@ -316,7 +285,7 @@ export default function Home() {
                   src={brand.logo}
                   alt={brand.name}
                   fill
-                  style={{ objectFit: 'cover', opacity: 0.8 }}
+                  style={{ objectFit: "cover", opacity: 0.8 }}
                   className="transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 flex items-end p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
@@ -326,10 +295,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-20 bg-gray-900 rounded-2xl p-12 text-white text-center opacity-0 animate-fade-in-scroll" style={{ animationDelay: '800ms' }}>
+          <div
+            className="mt-20 bg-gray-900 rounded-2xl p-12 text-white text-center opacity-0 animate-fade-in-scroll"
+            style={{ animationDelay: "800ms" }}
+          >
             <h3 className="text-3xl font-bold mb-6">Ready to get started?</h3>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Experience the GRANDTEX difference and discover how our premium leathers can elevate your products.
+              Experience the GRANDTEX difference and discover how our premium
+              leathers can elevate your products.
             </p>
             <Link
               href="/contact"
