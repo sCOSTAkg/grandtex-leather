@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import AnimatedSection from "@/components/AnimatedSection";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header({ transparent = false }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -114,19 +115,21 @@ export default function Header({ transparent = false }) {
           GRANDTEX
         </Link>
 
-        <Sheet>
-          <SheetTrigger asChild>
-            <button
-              className={`flex items-center space-x-2 transition-colors duration-300 ${textClasses} hover:opacity-75`}
-              onClick={() => setIsMenuOpen(true)}
+        <div className="flex items-center space-x-4">
+          <ThemeToggle className={textClasses} />
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                className={`flex items-center space-x-2 transition-colors duration-300 ${textClasses} hover:opacity-75`}
+                onClick={() => setIsMenuOpen(true)}
+              >
+                <span>Меню</span>
+              </button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="w-full sm:max-w-md md:max-w-lg lg:max-w-xl p-0 overflow-y-auto"
             >
-              <span>Меню</span>
-            </button>
-          </SheetTrigger>
-          <SheetContent
-            side="right"
-            className="w-full sm:max-w-md md:max-w-lg lg:max-w-xl p-0 overflow-y-auto"
-          >
             <AnimatedSection className="h-full flex flex-col">
               <div className="flex justify-between items-center px-8 py-6 border-b">
                 <Link href="/" className="text-3xl font-bold">
@@ -249,7 +252,8 @@ export default function Header({ transparent = false }) {
               </div>
             </AnimatedSection>
           </SheetContent>
-        </Sheet>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

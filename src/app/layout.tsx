@@ -4,6 +4,7 @@ import "./globals.css";
 import ClientBody from "./ClientBody";
 import Script from "next/script";
 import Animations from "./animations";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -93,10 +94,12 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className="antialiased">
-        <ClientBody>
-          <Animations />
-          {children}
-        </ClientBody>
+        <ThemeProvider>
+          <ClientBody>
+            <Animations />
+            {children}
+          </ClientBody>
+        </ThemeProvider>
       </body>
     </html>
   );
