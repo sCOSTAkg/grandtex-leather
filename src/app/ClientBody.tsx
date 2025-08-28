@@ -11,7 +11,7 @@ export default function ClientBody({
   // Remove any extension-added classes during hydration
   useEffect(() => {
     // This runs only on the client after hydration
-    document.body.className = "antialiased font-inter bg-background";
+    document.body.className = "antialiased bg-background";
     initScrollAnimations();
     const cleanupParallax = initParallaxEffect();
 
@@ -20,5 +20,5 @@ export default function ClientBody({
     };
   }, []);
 
-  return <div className="antialiased font-inter">{children}</div>;
+  return <div className="antialiased">{children}</div>;
 }
