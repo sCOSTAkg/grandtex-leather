@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Header({ transparent = false }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -126,7 +127,7 @@ export default function Header({ transparent = false }) {
             side="right"
             className="w-full sm:max-w-md md:max-w-lg lg:max-w-xl p-0 overflow-y-auto"
           >
-            <div className="h-full flex flex-col">
+            <AnimatedSection className="h-full flex flex-col">
               <div className="flex justify-between items-center px-8 py-6 border-b">
                 <Link href="/" className="text-3xl font-bold">
                   grandtex
@@ -143,7 +144,11 @@ export default function Header({ transparent = false }) {
                 <nav className="space-y-12">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {navLinks.slice(0, 4).map((link, index) => (
-                      <div key={link.title} className="space-y-4">
+                      <AnimatedSection
+                        key={link.title}
+                        delay={index * 0.1}
+                        className="space-y-4"
+                      >
                         <Link
                           href={link.href}
                           className="flex items-center space-x-2 text-lg font-medium hover:text-accent transition-colors"
@@ -186,11 +191,11 @@ export default function Header({ transparent = false }) {
                             </div>
                           </div>
                         )}
-                      </div>
+                      </AnimatedSection>
                     ))}
                   </div>
 
-                  <div className="space-y-4">
+                  <AnimatedSection delay={0.4} className="space-y-4">
                     <h2 className="text-lg font-medium">
                       Дополнительная информация
                     </h2>
@@ -210,7 +215,7 @@ export default function Header({ transparent = false }) {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </AnimatedSection>
                 </nav>
               </div>
 
@@ -242,7 +247,7 @@ export default function Header({ transparent = false }) {
                   </Link>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </SheetContent>
         </Sheet>
       </div>
