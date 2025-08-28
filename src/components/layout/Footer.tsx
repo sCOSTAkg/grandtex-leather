@@ -1,203 +1,99 @@
-import Link from "next/link";
+import Link from 'next/link';
 
+/**
+ * The site footer. Organised into four columns to mirror the structure
+ * described in the adaptation guide: services, production categories,
+ * information and contact details. The final column also contains a
+ * subscription form placeholder that can later be wired to a backend.
+ */
 export default function Footer() {
   return (
-    <footer className="w-full py-16 px-8 bg-muted">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-secondary/20 border-t border-border mt-24">
+      <div className="container py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Services column */}
         <div>
-          <h3 className="font-medium mb-4">Навигация</h3>
-          <ul className="space-y-2">
+          <h4 className="font-semibold mb-3 text-foreground">Услуги</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <Link href="/leathers" className="text-muted-foreground hover:text-foreground">
-                Наши кожи
-              </Link>
+              <Link href="/services#design" className="hover:text-primary">Разработка лекал</Link>
             </li>
             <li>
-              <Link
-                href="/emboss-perforation"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Тиснение и перфорация
-              </Link>
+              <Link href="/services#sampling" className="hover:text-primary">Пошив образцов</Link>
             </li>
             <li>
-              <Link
-                href="/why-grandtex"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Почему GRANDTEX?
-              </Link>
+              <Link href="/services#manufacturing" className="hover:text-primary">Серийное производство</Link>
             </li>
             <li>
-              <Link
-                href="/about-grandtex"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                О компании
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/tanneries"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Кожевенные заводы
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-muted-foreground hover:text-foreground">
-                Контакты
-              </Link>
+              <Link href="/services#quality" className="hover:text-primary">Контроль качества</Link>
             </li>
           </ul>
         </div>
-
+        {/* Production column */}
         <div>
-          <h3 className="font-medium mb-4">Коллекции</h3>
-          <ul className="space-y-2">
+          <h4 className="font-semibold mb-3 text-foreground">Производство</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <Link
-                href="/collections/spring-summer-2027"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Коллекция Весна-Лето 27
-              </Link>
+              <Link href="/production/mens" className="hover:text-primary">Мужская одежда</Link>
             </li>
             <li>
-              <Link
-                href="/collections/fw26"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Коллекция Осень-Зима 26
-              </Link>
+              <Link href="/production/womens" className="hover:text-primary">Женская одежда</Link>
+            </li>
+            <li>
+              <Link href="/production/business" className="hover:text-primary">Деловая одежда</Link>
+            </li>
+            <li>
+              <Link href="/production/sports" className="hover:text-primary">Спортивная одежда</Link>
+            </li>
+            <li>
+              <Link href="/production/kids" className="hover:text-primary">Детская одежда</Link>
             </li>
           </ul>
         </div>
-
+        {/* Information column */}
         <div>
-          <h3 className="font-medium mb-4">Устойчивость</h3>
-          <ul className="space-y-2">
+          <h4 className="font-semibold mb-3 text-foreground">Информация</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <Link
-                href="/sustainability"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Устойчивость
-              </Link>
+              <Link href="/about" className="hover:text-primary">О нас</Link>
             </li>
             <li>
-              <Link
-                href="/sustainability#operational-excellence"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Операционное совершенство
-              </Link>
+              <Link href="/faq" className="hover:text-primary">FAQ</Link>
             </li>
             <li>
-              <Link
-                href="/sustainability#circularity"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Циркулярность
-              </Link>
+              <Link href="/calculator" className="hover:text-primary">Калькулятор стоимости</Link>
             </li>
             <li>
-              <Link
-                href="/sustainability#climate-action"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Климатические действия
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/sustainability#social-impact"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Социальное воздействие
-              </Link>
+              <Link href="/portfolio" className="hover:text-primary">Портфолио</Link>
             </li>
           </ul>
         </div>
-
+        {/* Contacts and subscribe column */}
         <div>
-          <h3 className="font-medium mb-4">Информация</h3>
-          <ul className="space-y-2">
-            <li>
-              <Link
-                href="/highlights"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Основные моменты
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/education"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Обучение
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-muted-foreground hover:text-foreground">
-                Локации
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/resources"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Ресурсы
-              </Link>
-            </li>
+          <h4 className="font-semibold mb-3 text-foreground">Контакты</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+            <li>Тел: +996 507 383 127</li>
+            <li>Email: <a href="mailto:info@grandtex.ru" className="hover:text-primary">info@grandtex.ru</a></li>
+            <li>Telegram: <a href="https://t.me/grandtex" className="hover:text-primary">@grandtex</a></li>
+            <li>Адрес: г. Бишкек, ул. Промышленная 15</li>
           </ul>
-
-          <div className="mt-8">
-            <p className="text-sm text-muted-foreground mb-4">
-              Подпишитесь на нашу рассылку, чтобы получать последние новости о
-              продуктах, устойчивых инициативах и сервисах.
-            </p>
-            <form className="flex flex-col space-y-2">
-              <input
-                type="email"
-                placeholder="Электронная почта"
-                className="px-4 py-2 border border-border rounded-md"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-md"
-              >
-                Подписаться
-              </button>
-            </form>
-          </div>
+          <h4 className="font-semibold mb-2 text-foreground">Подписаться на новости</h4>
+          <form onSubmit={(e) => e.preventDefault()} className="flex items-center">
+            <input
+              type="email"
+              placeholder="Ваш email"
+              className="flex-grow rounded-l-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="rounded-r-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Отправить
+            </button>
+          </form>
         </div>
       </div>
-
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
-        <p className="text-muted-foreground text-sm">© 2025 GRANDTEX</p>
-        <div className="flex space-x-6 mt-4 md:mt-0">
-          <Link
-            href="https://www.linkedin.com"
-            className="text-muted-foreground hover:text-foreground"
-          >
-            LinkedIn
-          </Link>
-          <Link
-            href="https://www.instagram.com"
-            className="text-muted-foreground hover:text-foreground"
-          >
-            Instagram
-          </Link>
-          <Link
-            href="/privacy-policy"
-            className="text-muted-foreground hover:text-foreground"
-          >
-            Политика конфиденциальности
-          </Link>
-        </div>
+      <div className="border-t border-border py-4">
+        <p className="text-center text-xs text-muted-foreground">© {new Date().getFullYear()} GRANDTEX. Все права защищены.</p>
       </div>
     </footer>
   );

@@ -1,42 +1,26 @@
 {
-  "name": "nextjs-shadcn",
+  "name": "grandtex-leather",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "bunx tsc --noEmit && next lint",
-    "format": "bunx biome format --write",
-    "prepare": "husky"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.1.15",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.23.12",
-    "gsap": "^3.12.5",
-    "lucide-react": "^0.542.0",
     "next": "^15.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "same-runtime": "^0.0.1",
-    "tailwind-merge": "^3.3.0",
-    "tailwindcss-animate": "^1.0.7",
-    "winston": "^3.17.0"
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.542.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@eslint/eslintrc": "^3.3.1",
-    "@types/node": "^20.17.50",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.5.3",
+    "autoprefixer": "^10.4.14",
     "@types/react": "^18.3.22",
     "@types/react-dom": "^18.3.7",
-    "@types/winston": "^2.4.4",
-    "eslint": "^9.27.0",
-    "eslint-config-next": "15.1.7",
-    "husky": "^9.1.7",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"
   }
 }

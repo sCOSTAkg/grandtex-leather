@@ -1,26 +1,18 @@
-import Header, { HeaderConfig } from './Header';
+import Header from './Header';
 import Footer from './Footer';
-import CookieConsent from './CookieConsent';
-import Animations from '@/app/animations';
+import type { ReactNode } from 'react';
 
-interface MainLayoutProps {
-  children: React.ReactNode;
-  transparentHeader?: HeaderConfig;
-}
-
-export default function MainLayout({
-  children,
-  transparentHeader = { transparent: false }
-}: MainLayoutProps) {
+/**
+ * MainLayout composes the Header, page content and Footer. It accounts for
+ * the fixed header by adding top padding to the main element. Use this
+ * layout as a wrapper for all page-level components.
+ */
+export default function MainLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header config={transparentHeader} />
-      <main className="flex-1">
-        {children}
-      </main>
+    <>
+      <Header />
+      <main className="pt-20">{children}</main>
       <Footer />
-      <CookieConsent />
-      <Animations />
-    </div>
+    </>
   );
 }

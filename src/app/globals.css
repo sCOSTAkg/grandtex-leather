@@ -8,8 +8,6 @@
     --foreground: 210 15% 20%;
     --card: 0 0% 100%;
     --card-foreground: 210 15% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 20%;
     --primary: 220 60% 50%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 15% 90%;
@@ -24,16 +22,12 @@
     --input: 210 15% 80%;
     --ring: 220 60% 50%;
     --radius: 0.5rem;
-    --font-sans: var(--font-inter);
   }
-
   .dark {
     --background: 210 15% 10%;
     --foreground: 0 0% 100%;
     --card: 210 15% 13%;
     --card-foreground: 0 0% 100%;
-    --popover: 210 15% 13%;
-    --popover-foreground: 0 0% 100%;
     --primary: 220 60% 50%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 15% 25%;
@@ -56,32 +50,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans);
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-}
-
-@layer utilities {
-  @media (prefers-reduced-motion: reduce) {
-    .animate-fade-in-scroll {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-    }
-
-    [data-parallax] {
-      transform: none !important;
-    }
-
-    [data-product-card],
-    [data-product-card] [data-product-image] {
-      transform: none !important;
-      transition: none !important;
-    }
   }
 }

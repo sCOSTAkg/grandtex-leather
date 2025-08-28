@@ -1,58 +1,50 @@
-import type { NavLink } from "./Header";
+export interface NavLink {
+  /**
+   * Display title for the link.
+   */
+  title: string;
+  /**
+   * Path relative to the site root. When set, clicking the link navigates to this route.
+   */
+  href: string;
+  /**
+   * Optional child links for dropdown menus.
+   */
+  subLinks?: NavLink[];
+}
 
+/**
+ * Default navigation structure used by the Header component. The menu items
+ * reflect the structure described in the adaptation guide: services, about,
+ * portfolio, production categories and contacts. Add additional links or
+ * sub-links as your application grows.
+ */
 export const defaultNavLinks: NavLink[] = [
   {
-    title: "Кожа",
-    href: "/leathers",
-    image: "https://ext.same-assets.com/1118492138/3442149313.jpeg",
+    title: 'Услуги',
+    href: '/services',
+  },
+  {
+    title: 'О нас',
+    href: '/about',
+  },
+  {
+    title: 'Портфолио',
+    href: '/portfolio',
+  },
+  {
+    title: 'Производство',
+    href: '/production',
     subLinks: [
-      {
-        title: "Коллекция Весна-Лето 27",
-        href: "/collections/spring-summer-2027",
-      },
-      {
-        title: "Коллекция Осень-Зима 26",
-        href: "/collections/fw26",
-      },
+      { title: 'Мужская одежда', href: '/production/mens' },
+      { title: 'Женская одежда', href: '/production/womens' },
+      { title: 'Деловая одежда', href: '/production/business' },
+      { title: 'Спортивная одежда', href: '/production/sports' },
+      { title: 'Детская одежда', href: '/production/kids' },
     ],
   },
   {
-    title: "Тиснение и перфорация",
-    href: "/emboss-perforation",
-    image: "https://ext.same-assets.com/1118492138/3513175735.jpeg",
+    title: 'Контакты',
+    href: '/contact',
   },
-  {
-    title: "Почему GRANDTEX?",
-    href: "/why-grandtex",
-    image: "https://ext.same-assets.com/1118492138/2560085916.jpeg",
-    subLinks: [
-      { title: "О GRANDTEX", href: "/about-grandtex" },
-      { title: "Кожевенные заводы", href: "/tanneries" },
-    ],
-  },
-  {
-    title: "Устойчивость",
-    href: "/sustainability",
-    image: "https://ext.same-assets.com/1118492138/180971912.jpeg",
-    subLinks: [
-      {
-        title: "Операционное совершенство",
-        href: "/sustainability#operational-excellence",
-      },
-      { title: "Циркулярность", href: "/sustainability#circularity" },
-      {
-        title: "Климатические действия",
-        href: "/sustainability#climate-action",
-      },
-      {
-        title: "Социальное воздействие",
-        href: "/sustainability#social-impact",
-      },
-    ],
-  },
-  { title: "Основные моменты", href: "/highlights" },
-  { title: "Обучение", href: "/education" },
-  { title: "Локации", href: "/contact" },
-  { title: "Ресурсы", href: "/resources" },
 ];
-

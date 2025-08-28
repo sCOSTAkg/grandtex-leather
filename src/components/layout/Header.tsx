@@ -1,132 +1,104 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import ThemeToggle from "@/components/ThemeToggle";
-import { Search, Plus, ArrowRight } from "lucide-react";
+import { useState } from 'react';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import { defaultNavLinks, NavLink } from './navLinks';
 
-import { defaultNavLinks } from "./navLinks";
-
-export interface NavLink {
-  title: string;
-  href: string;
-  image?: string;
-  subLinks?: NavLink[];
-}
-
-export interface HeaderConfig {
-  transparent: boolean;
+/**
+ * Renders a responsive site header. On larger viewports the navigation
+ * items are displayed inline. On mobile a hamburger icon toggles a
+ * slide-over menu. The component uses the default navigation links but
+ * accepts an optional override via props.
+ */
+interface HeaderProps {
+  /**
+   * Override the default navigation with a custom set of links. Useful when
+   * tailoring the header for specific pages or layouts.
+   */
   links?: NavLink[];
 }
 
-interface HeaderProps {
-  config: HeaderConfig;
-}
-export default function Header({ config }: HeaderProps) {
-  const { transparent, links } = config;
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const headerClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    transparent && !isScrolled ? "bg-transparent" : "bg-background"
-  } ${
-    isScrolled
-      ? "mx-auto w-max rounded-full backdrop-blur shadow-md"
-      : "shadow-sm"
-  }`;
-
-  const textClasses =
-    transparent && !isScrolled ? "text-primary-foreground" : "text-foreground";
+export default function Header({ links }: HeaderProps) {
+  const [open, setOpen] = useState(false);
   const navLinks = links ?? defaultNavLinks;
 
+  /**
+   * Renders a list of links recursively. If a link contains subLinks, they
+   * will be displayed as an indented list below the parent on mobile.
+   */
+  const renderLinks = (items: NavLink[], depth = 0) => {
+    return items.map((item) => (
+      <div key={item.title} className={depth === 0 ? 'mt-4' : 'ml-4 mt-2'}>
+        <Link
+          href={item.href}
+          className="block text-lg font-medium text-foreground hover:text-primary transition-colors"
+          onClick={() => setOpen(false)}
+        >
+          {item.title}
+        </Link>
+        {item.subLinks && item.subLinks.length > 0 && (
+          <div>{renderLinks(item.subLinks, depth + 1)}</div>
+        )}
+      </div>
+    ));
+  };
+
   return (
-    <>
-      <header className={headerClasses}>
-        <div className="flex items-center justify-between w-full px-4 py-4">
-          {/* Search */}
-          <Sheet>
-            <SheetTrigger asChild>
-              <button className={`${textClasses} p-2`}>
-                <Search className="h-5 w-5" />
-              </button>
-            </SheetTrigger>
-            <SheetContent side="top" className="h-[60vh] p-6">
-              <div className="flex items-center gap-2">
-                <Search className="h-5 w-5 text-muted-foreground" />
-                <input
-                  type="text"
-                  placeholder="Поиск по коже"
-                  className="flex-1 bg-transparent border-b border-muted-foreground/20 pb-1 outline-none"
-                />
-              </div>
-            </SheetContent>
-          </Sheet>
-
-          {/* Logo */}
-          <Link
-            href="/"
-            className={`text-2xl font-bold transition-colors duration-300 ${textClasses}`}
-          >
-            GRANDTEX
-          </Link>
-
-          <div className="flex items-center gap-3">
-            <ThemeToggle className={`hidden md:block ${textClasses}`} />
-            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <SheetTrigger asChild>
-                <button
-                  className={`${textClasses} p-2 md:hidden`}
-                  aria-label="Toggle menu"
-                >
-                  <Plus
-                    className={`h-6 w-6 transition-transform ${
-                      isMenuOpen ? "rotate-45" : ""
-                    }`}
-                  />
-                </button>
-              </SheetTrigger>
-              <SheetContent side="bottom" className="p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {navLinks.map((item) => (
-                    <Link
-                      key={item.title}
-                      href={item.href}
-                      className="relative h-32 rounded-xl overflow-hidden block"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.image && (
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          style={{ objectFit: "cover" }}
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 p-4 flex flex-col justify-between">
-                        <span className="text-primary-foreground text-lg font-medium">
-                          {item.title}
-                        </span>
-                        <ArrowRight className="self-end h-5 w-5 text-primary-foreground" />
-                      </div>
-                    </Link>
-                  ))}
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur border-b border-border">
+      <nav className="container flex items-center justify-between py-4">
+        <Link href="/" className="font-bold text-xl text-primary">
+          GRANDTEX
+        </Link>
+        {/* Desktop navigation */}
+        <div className="hidden md:flex space-x-8">
+          {navLinks.map((item) => (
+            <div key={item.title} className="group relative">
+              <Link
+                href={item.href}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {item.title}
+              </Link>
+              {item.subLinks && item.subLinks.length > 0 && (
+                <div className="absolute left-0 top-full mt-2 hidden min-w-max rounded-md bg-card shadow-lg group-hover:block">
+                  <div className="p-4 space-y-2">
+                    {item.subLinks.map((sub) => (
+                      <Link
+                        key={sub.title}
+                        href={sub.href}
+                        className="block text-sm text-foreground hover:text-primary"
+                      >
+                        {sub.title}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </SheetContent>
-            </Sheet>
+              )}
+            </div>
+          ))}
+        </div>
+        {/* Mobile menu toggle */}
+        <button
+          className="md:hidden p-2 text-foreground"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </nav>
+      {/* Mobile drawer */}
+      {open && (
+        <div className="md:hidden fixed inset-0 z-40 bg-black/50" onClick={() => setOpen(false)}>
+          <div
+            className="absolute right-0 top-0 h-full w-64 bg-background p-6 shadow-lg overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-lg font-semibold mb-4 text-primary">Меню</h2>
+            {renderLinks(navLinks)}
           </div>
         </div>
-      </header>
-    </>
+      )}
+    </header>
   );
 }
