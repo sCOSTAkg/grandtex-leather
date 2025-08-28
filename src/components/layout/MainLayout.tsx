@@ -7,7 +7,12 @@ import type { ReactNode } from 'react';
  * the fixed header by adding top padding to the main element. Use this
  * layout as a wrapper for all page-level components.
  */
-export default function MainLayout({ children }: { children: ReactNode }) {
+interface MainLayoutProps {
+  children: ReactNode;
+  transparentHeader?: { transparent: boolean };
+}
+
+export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
       <Header />
