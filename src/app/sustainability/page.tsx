@@ -6,7 +6,7 @@ export default function SustainabilityPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] bg-black text-white mt-20">
+      <section className="relative w-full h-[60vh] bg-primary text-primary-foreground mt-20">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/180971912.jpeg"
@@ -54,7 +54,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Pillars Section */}
-      <section id="operational-excellence" className="py-16 px-8 bg-gray-50">
+      <section id="operational-excellence" className="py-16 px-8 bg-secondary">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Операционное совершенство</h2>
 
@@ -135,7 +135,7 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
-      <section id="climate-action" className="py-16 px-8 bg-gray-50">
+      <section id="climate-action" className="py-16 px-8 bg-secondary">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Климатические действия</h2>
 
@@ -213,23 +213,23 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Reports Section */}
-      <section className="py-16 px-8 bg-gray-100">
+      <section className="py-16 px-8 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">Отчёты по устойчивости</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[2025, 2024, 2023].map((year) => (
-              <div key={year} className="bg-white p-6 rounded-lg shadow-sm">
+              <div key={year} className="bg-background p-6 rounded-lg shadow-sm">
                 <h3 className="text-xl font-bold mb-2">
                   Отчёт по устойчивости за {year} год
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-muted-foreground mb-4">
                   Наш ежегодный отчёт, описывающий усилия в области
                   устойчивости, достижения и цели.
                 </p>
                 <Link
                   href="#"
-                  className="text-black font-medium hover:underline"
+                  className="text-foreground font-medium hover:underline"
                 >
                   Скачать PDF
                 </Link>
@@ -251,7 +251,7 @@ export default function SustainabilityPage() {
           </p>
           <Link
             href="/contact"
-            className="px-8 py-3 bg-black text-white rounded-full text-lg inline-block"
+            className="px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg inline-block"
           >
             Свяжитесь с нами
           </Link>

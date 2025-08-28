@@ -23,10 +23,10 @@ export default function Header({ transparent = false }) {
   }, []);
 
   const headerClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    transparent && !isScrolled ? "bg-transparent" : "bg-white shadow-sm"
+    transparent && !isScrolled ? "bg-transparent" : "bg-background shadow-sm"
   }`;
 
-  const textClasses = transparent && !isScrolled ? "text-white" : "text-black";
+  const textClasses = transparent && !isScrolled ? "text-primary-foreground" : "text-foreground";
 
   const navLinks = [
     {
@@ -136,7 +136,7 @@ export default function Header({ transparent = false }) {
                   grandtex
                 </Link>
                 <button
-                  className="text-gray-500 hover:text-black transition-colors"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Закрыть
@@ -165,9 +165,9 @@ export default function Header({ transparent = false }) {
                               <li key={subLink.title}>
                                 <Link
                                   href={subLink.href}
-                                  className={`text-gray-600 hover:text-black transition-colors ${
+                                  className={`text-muted-foreground hover:text-foreground transition-colors ${
                                     pathname === subLink.href
-                                      ? "font-medium text-black"
+                                      ? "font-medium text-foreground"
                                       : ""
                                   }`}
                                 >
@@ -187,8 +187,8 @@ export default function Header({ transparent = false }) {
                               style={{ objectFit: "cover" }}
                               className="transition-transform duration-500 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end p-4">
-                              <span className="text-white font-medium">
+                            <div className="absolute inset-0 bg-primary bg-opacity-30 flex items-end p-4">
+                              <span className="text-primary-foreground font-medium">
                                 {link.title}
                               </span>
                             </div>
@@ -207,9 +207,9 @@ export default function Header({ transparent = false }) {
                         <li key={link.title}>
                           <Link
                             href={link.href}
-                            className={`text-gray-600 hover:text-black transition-colors ${
+                            className={`text-muted-foreground hover:text-foreground transition-colors ${
                               pathname === link.href
-                                ? "font-medium text-black"
+                                ? "font-medium text-foreground"
                                 : ""
                             }`}
                           >
@@ -227,7 +227,7 @@ export default function Header({ transparent = false }) {
                   <div className="flex space-x-4">
                     <Link
                       href="https://www.linkedin.com"
-                      className="text-gray-500 hover:text-black transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -235,7 +235,7 @@ export default function Header({ transparent = false }) {
                     </Link>
                     <Link
                       href="https://www.instagram.com"
-                      className="text-gray-500 hover:text-black transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -244,7 +244,7 @@ export default function Header({ transparent = false }) {
                   </div>
                   <Link
                     href="/contact"
-                    className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
+                    className="px-6 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/80 transition-colors"
                   >
                     Контакты
                   </Link>

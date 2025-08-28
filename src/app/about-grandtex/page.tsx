@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] bg-black text-white mt-20">
+      <section className="relative w-full h-[60vh] bg-primary text-primary-foreground mt-20">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/1723594169.jpeg"
@@ -78,18 +78,18 @@ export default function AboutPage() {
           </div>
 
           <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-100 p-8 rounded-lg">
+            <div className="bg-muted p-8 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Наша миссия</h3>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Создавать превосходные кожаные изделия с использованием
                 инновационных и устойчивых практик, выступая надёжным партнёром
                 для брендов по всему миру.
               </p>
             </div>
 
-            <div className="bg-gray-100 p-8 rounded-lg">
+            <div className="bg-muted p-8 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Наше видение</h3>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Лидировать в кожевенной отрасли по показателям устойчивости,
                 инноваций и качества, устанавливая новые стандарты
                 ответственного производства.
@@ -103,9 +103,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="text-center">
-                  <div className="aspect-square bg-gray-200 rounded-full w-48 h-48 mx-auto mb-4"></div>
+                  <div className="aspect-square bg-muted rounded-full w-48 h-48 mx-auto mb-4"></div>
                   <h3 className="text-xl font-bold">Имя руководителя</h3>
-                  <p className="text-gray-500">Должность</p>
+                  <p className="text-muted-foreground">Должность</p>
                 </div>
               ))}
             </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-8 bg-gray-100">
+      <section className="py-16 px-8 bg-muted">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">
             Присоединяйтесь к нашему пути
@@ -125,7 +125,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/contact"
-            className="px-8 py-3 bg-black text-white rounded-full text-lg inline-block"
+            className="px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg inline-block"
           >
             Свяжитесь с нами
           </Link>

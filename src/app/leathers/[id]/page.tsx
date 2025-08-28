@@ -124,7 +124,7 @@ export default async function LeatherDetailPage({
           </p>
           <Link
             href="/leathers"
-            className="px-6 py-2 bg-black text-white rounded-full"
+            className="px-6 py-2 bg-primary text-primary-foreground rounded-full"
           >
             Вернуться к коже
           </Link>
@@ -138,16 +138,16 @@ export default async function LeatherDetailPage({
       <div className="mt-20 pt-8">
         {/* Breadcrumb */}
         <div className="container mx-auto px-8 mb-8">
-          <div className="text-sm text-gray-500">
-            <Link href="/" className="hover:text-black">
+          <div className="text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-foreground">
               Главная
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/leathers" className="hover:text-black">
+            <Link href="/leathers" className="hover:text-foreground">
               Кожи
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-black">{product.name}</span>
+            <span className="text-foreground">{product.name}</span>
           </div>
         </div>
 
@@ -155,7 +155,7 @@ export default async function LeatherDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Product Images */}
             <div className="space-y-4">
-              <div className="relative aspect-square rounded-md overflow-hidden border border-gray-200">
+              <div className="relative aspect-square rounded-md overflow-hidden border border-border">
                 <Image
                   src={product.images[0]}
                   alt={product.name}
@@ -169,7 +169,7 @@ export default async function LeatherDetailPage({
                 {product.images.slice(1).map((image, index) => (
                   <div
                     key={index}
-                    className="relative aspect-square rounded-md overflow-hidden border border-gray-200"
+                    className="relative aspect-square rounded-md overflow-hidden border border-border"
                   >
                     <Image
                       src={image}
@@ -185,7 +185,7 @@ export default async function LeatherDetailPage({
             {/* Product Details */}
             <div>
               <h1 className="text-4xl font-bold mb-2">{product.name}</h1>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-muted-foreground mb-6">
                 Коллекция {product.collection}
               </p>
 
@@ -195,42 +195,42 @@ export default async function LeatherDetailPage({
 
               <div className="grid grid-cols-2 gap-x-8 gap-y-6 mb-10">
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-2">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">
                     ТИП
                   </h3>
                   <p>{product.type}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-2">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">
                     ОТДЕЛКА
                   </h3>
                   <p>{product.finish}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-2">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">
                     ОБРАБОТКА
                   </h3>
                   <p>{product.treatment}</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-2">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">
                     ТОЛЩИНА
                   </h3>
                   <p>{product.thickness}</p>
                 </div>
 
                 <div className="col-span-2">
-                  <h3 className="text-sm font-medium text-gray-500 mb-2">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">
                     ПРИМЕНЕНИЕ
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {product.applications.map((app, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                        className="px-3 py-1 bg-muted rounded-full text-sm"
                       >
                         {app}
                       </span>
@@ -239,14 +239,14 @@ export default async function LeatherDetailPage({
                 </div>
 
                 <div className="col-span-2">
-                  <h3 className="text-sm font-medium text-gray-500 mb-2">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">
                     ДОСТУПНЫЕ ЦВЕТА
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {product.colors.map((color, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-gray-100 rounded-full text-sm"
+                        className="px-3 py-1 bg-muted rounded-full text-sm"
                       >
                         {color}
                       </span>
@@ -256,23 +256,23 @@ export default async function LeatherDetailPage({
               </div>
 
               {/* Sustainability Info */}
-              <div className="bg-gray-50 p-6 rounded-md mb-8">
+              <div className="bg-secondary p-6 rounded-md mb-8">
                 <h3 className="text-lg font-medium mb-2">Устойчивость</h3>
-                <p className="text-gray-700">{product.sustainability}</p>
+                <p className="text-muted-foreground">{product.sustainability}</p>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="px-6 py-3 bg-black text-white rounded-full"
+                  className="px-6 py-3 bg-primary text-primary-foreground rounded-full"
                 >
                   Запросить образцы
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="px-6 py-3 border border-black rounded-full"
+                  className="px-6 py-3 border border-primary rounded-full"
                 >
                   Технические характеристики
                 </Link>
@@ -282,7 +282,7 @@ export default async function LeatherDetailPage({
         </div>
 
         {/* Related Products */}
-        <section className="mt-20 py-16 px-8 bg-gray-50">
+        <section className="mt-20 py-16 px-8 bg-secondary">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold mb-10">
               Вам также может понравиться
@@ -305,7 +305,7 @@ export default async function LeatherDetailPage({
                   <Link
                     key={relatedProduct.id}
                     href={`/leathers/${relatedProduct.id}`}
-                    className="group border border-gray-200 bg-white rounded-md overflow-hidden hover:shadow-md transition-shadow"
+                    className="group border border-border bg-background rounded-md overflow-hidden hover:shadow-md transition-shadow"
                   >
                     <div className="relative aspect-square">
                       <Image
@@ -319,7 +319,7 @@ export default async function LeatherDetailPage({
                       <h3 className="text-lg font-bold group-hover:text-accent transition-colors">
                         {relatedProduct.name}
                       </h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Коллекция {relatedProduct.collection}
                       </p>
                     </div>

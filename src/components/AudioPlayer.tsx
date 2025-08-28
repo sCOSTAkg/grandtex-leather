@@ -102,7 +102,7 @@ export default function AudioPlayer({ tracks, className }: AudioPlayerProps) {
   return (
     <div
       className={cn(
-        "w-full max-w-md p-4 rounded-xl shadow-md bg-white",
+        "w-full max-w-md p-4 rounded-xl shadow-md bg-background",
         className,
       )}
     >
@@ -121,14 +121,14 @@ export default function AudioPlayer({ tracks, className }: AudioPlayerProps) {
         <button
           onClick={handlePrev}
           aria-label="Предыдущий"
-          className="p-2 rounded-full hover:bg-gray-100"
+          className="p-2 rounded-full hover:bg-muted"
         >
           <SkipBack className="h-5 w-5" />
         </button>
         <button
           onClick={togglePlay}
           aria-label={playing ? "Пауза" : "Воспроизвести"}
-          className="p-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
+          className="p-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/80 transition-colors"
         >
           {playing ? (
             <Pause className="h-6 w-6" />
@@ -139,16 +139,16 @@ export default function AudioPlayer({ tracks, className }: AudioPlayerProps) {
         <button
           onClick={handleNext}
           aria-label="Следующий"
-          className="p-2 rounded-full hover:bg-gray-100"
+          className="p-2 rounded-full hover:bg-muted"
         >
           <SkipForward className="h-5 w-5" />
         </button>
       </div>
 
       <div className="mb-4">
-        <motion.div className="h-2 bg-gray-200 rounded">
+        <motion.div className="h-2 bg-muted rounded">
           <motion.div
-            className="h-full bg-black rounded"
+            className="h-full bg-primary rounded"
             style={{ width: `${progress * 100}%` }}
           />
         </motion.div>
@@ -201,8 +201,8 @@ export default function AudioPlayer({ tracks, className }: AudioPlayerProps) {
           <li key={track.src}>
             <button
               className={cn(
-                "w-full text-left p-2 rounded hover:bg-gray-100 transition-colors",
-                idx === current && "bg-gray-200",
+                "w-full text-left p-2 rounded hover:bg-muted transition-colors",
+                idx === current && "bg-muted",
               )}
               onClick={() => {
                 setCurrent(idx);

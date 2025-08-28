@@ -51,7 +51,7 @@ export default function TanneriesPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative w-full h-[50vh] bg-black text-white mt-20">
+      <section className="relative w-full h-[50vh] bg-primary text-primary-foreground mt-20">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/3036160331.jpeg"
@@ -97,21 +97,21 @@ export default function TanneriesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="bg-secondary p-8 rounded-lg">
               <div className="text-4xl font-bold text-accent mb-2">14M+</div>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Квадратных футов кожи производится ежегодно
               </p>
             </div>
-            <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="bg-secondary p-8 rounded-lg">
               <div className="text-4xl font-bold text-accent mb-2">600+</div>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Квалифицированных сотрудников на предприятиях
               </p>
             </div>
-            <div className="bg-gray-50 p-8 rounded-lg">
+            <div className="bg-secondary p-8 rounded-lg">
               <div className="text-4xl font-bold text-accent mb-2">20+</div>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Лет производственного совершенства
               </p>
             </div>
@@ -124,13 +124,13 @@ export default function TanneriesPage() {
         <section
           key={tannery.id}
           id={tannery.id}
-          className={`py-16 px-8 ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+          className={`py-16 px-8 ${index % 2 === 0 ? "bg-background" : "bg-secondary"}`}
         >
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className={`${index % 2 === 1 ? "order-2" : ""}`}>
                 <h2 className="text-3xl font-bold mb-4">{tannery.name}</h2>
-                <p className="text-xl text-gray-600 mb-6">{tannery.location}</p>
+                <p className="text-xl text-muted-foreground mb-6">{tannery.location}</p>
 
                 <div className="prose prose-lg max-w-none mb-8">
                   <p>{tannery.description}</p>
@@ -139,17 +139,17 @@ export default function TanneriesPage() {
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div>
                     <h3 className="text-lg font-bold mb-2">Основан</h3>
-                    <p className="text-gray-700">{tannery.established}</p>
+                    <p className="text-muted-foreground">{tannery.established}</p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-2">
                       Размер предприятия
                     </h3>
-                    <p className="text-gray-700">{tannery.size}</p>
+                    <p className="text-muted-foreground">{tannery.size}</p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-2">Годовая мощность</h3>
-                    <p className="text-gray-700">{tannery.capacity}</p>
+                    <p className="text-muted-foreground">{tannery.capacity}</p>
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-2">Сертификаты</h3>
@@ -157,7 +157,7 @@ export default function TanneriesPage() {
                       {tannery.certifications.map((cert, i) => (
                         <span
                           key={i}
-                          className="inline-block px-3 py-1 bg-gray-100 rounded-full text-sm"
+                          className="inline-block px-3 py-1 bg-muted rounded-full text-sm"
                         >
                           {cert}
                         </span>
@@ -166,20 +166,20 @@ export default function TanneriesPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 p-6 rounded-lg mb-8 border-l-4 border-accent">
+                <div className="bg-secondary p-6 rounded-lg mb-8 border-l-4 border-accent">
                   <h3 className="text-lg font-bold mb-2">Специализация</h3>
-                  <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                  <ul className="list-disc pl-5 text-muted-foreground space-y-1">
                     {tannery.specialties.map((specialty, i) => (
                       <li key={i}>{specialty}</li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-green-500">
+                <div className="bg-secondary p-6 rounded-lg border-l-4 border-accent">
                   <h3 className="text-lg font-bold mb-2">
                     Инициативы устойчивости
                   </h3>
-                  <p className="text-gray-700">{tannery.sustainability}</p>
+                  <p className="text-muted-foreground">{tannery.sustainability}</p>
                 </div>
               </div>
 
@@ -215,7 +215,7 @@ export default function TanneriesPage() {
       ))}
 
       {/* Manufacturing Process */}
-      <section className="py-16 px-8 bg-gray-900 text-white">
+      <section className="py-16 px-8 bg-primary text-primary-foreground">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Наш производственный процесс
@@ -277,10 +277,10 @@ export default function TanneriesPage() {
                   {step.step}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-300">{step.description}</p>
+                <p className="text-muted-foreground">{step.description}</p>
 
                 {step.step < 8 && (
-                  <div className="hidden md:block absolute top-6 left-12 w-full h-px bg-gray-700"></div>
+                  <div className="hidden md:block absolute top-6 left-12 w-full h-px bg-muted"></div>
                 )}
               </div>
             ))}
@@ -289,7 +289,7 @@ export default function TanneriesPage() {
       </section>
 
       {/* Quality Assurance */}
-      <section className="py-16 px-8 bg-white">
+      <section className="py-16 px-8 bg-background">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Гарантия качества
@@ -297,7 +297,7 @@ export default function TanneriesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-20 h-20 bg-muted rounded-full mx-auto mb-4 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -313,14 +313,14 @@ export default function TanneriesPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3">Лабораторные испытания</h3>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Наши лаборатории проводят строгие испытания физических свойств,
                 химического состава и эксплуатационных характеристик.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-20 h-20 bg-muted rounded-full mx-auto mb-4 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -336,7 +336,7 @@ export default function TanneriesPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3">Стандарты инспекции</h3>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Мы соблюдаем строгие протоколы проверки на каждом этапе
                 производства, чтобы обеспечить стабильное качество и выявлять
                 проблемы на ранних стадиях.
@@ -344,7 +344,7 @@ export default function TanneriesPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <div className="w-20 h-20 bg-muted rounded-full mx-auto mb-4 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -360,7 +360,7 @@ export default function TanneriesPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3">Сертификация</h3>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Наши предприятия сертифицированы в соответствии с международными
                 стандартами управления качеством, экологической эффективности и
                 безопасности.
@@ -371,7 +371,7 @@ export default function TanneriesPage() {
       </section>
 
       {/* Tour CTA */}
-      <section className="py-16 px-8 bg-gray-50">
+      <section className="py-16 px-8 bg-secondary">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Посетите наши предприятия</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
@@ -381,7 +381,7 @@ export default function TanneriesPage() {
           </p>
           <Link
             href="/contact"
-            className="px-8 py-3 bg-black text-white rounded-full text-lg inline-block hover:bg-gray-900 transition-colors"
+            className="px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg inline-block hover:bg-primary/80 transition-colors"
           >
             Запланировать визит
           </Link>
