@@ -137,7 +137,7 @@ export default async function CollectionDetailPage({
           </p>
           <Link
             href="/collections"
-            className="px-6 py-2 bg-black text-white rounded-full"
+            className="px-6 py-2 bg-primary text-primary-foreground rounded-full"
           >
             Вернуться к коллекциям
           </Link>
@@ -150,7 +150,7 @@ export default async function CollectionDetailPage({
     <MainLayout>
       <div className="mt-20">
         {/* Hero Section */}
-        <section className="relative w-full h-[60vh] bg-black text-white">
+        <section className="relative w-full h-[60vh] bg-primary text-primary-foreground">
           <div className="absolute inset-0 z-0">
             <Image
               src={collection.mainImage}
@@ -188,11 +188,11 @@ export default async function CollectionDetailPage({
                   <h3 className="text-xl font-bold mb-4">Темы коллекции</h3>
                   <div className="space-y-4">
                     {collection.themes.map((theme, index) => (
-                      <div key={index} className="bg-gray-50 p-5 rounded-md">
+                      <div key={index} className="bg-secondary p-5 rounded-md">
                         <h4 className="text-lg font-bold mb-2">
                           {theme.title}
                         </h4>
-                        <p className="text-gray-700">{theme.description}</p>
+                        <p className="text-muted-foreground">{theme.description}</p>
                       </div>
                     ))}
                   </div>
@@ -201,7 +201,7 @@ export default async function CollectionDetailPage({
                 <div className="mt-8">
                   <Link
                     href="#"
-                    className="px-6 py-3 bg-black text-white rounded-full inline-block"
+                    className="px-6 py-3 bg-primary text-primary-foreground rounded-full inline-block"
                   >
                     Скачать лукбук
                   </Link>
@@ -230,7 +230,7 @@ export default async function CollectionDetailPage({
         </section>
 
         {/* Collection Products */}
-        <section className="py-16 px-8 bg-gray-50">
+        <section className="py-16 px-8 bg-secondary">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold mb-12">Избранные кожи</h2>
 
@@ -239,7 +239,7 @@ export default async function CollectionDetailPage({
                 <Link
                   key={product.id}
                   href={`/leathers/${product.id}`}
-                  className="group bg-white border border-gray-200 rounded-md overflow-hidden hover:shadow-md transition-shadow"
+                  className="group bg-background border border-border rounded-md overflow-hidden hover:shadow-md transition-shadow"
                 >
                   <div className="relative aspect-square">
                     <Image
@@ -253,7 +253,7 @@ export default async function CollectionDetailPage({
                     <h3 className="text-xl font-bold mb-1 group-hover:text-accent transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-gray-500">{product.type}</p>
+                    <p className="text-sm text-muted-foreground">{product.type}</p>
                   </div>
                 </Link>
               ))}
@@ -262,7 +262,7 @@ export default async function CollectionDetailPage({
             <div className="mt-12 text-center">
               <Link
                 href="/leathers"
-                className="px-6 py-3 border border-black rounded-full inline-block"
+                className="px-6 py-3 border border-primary rounded-full inline-block"
               >
                 Смотреть все кожи
               </Link>
@@ -274,7 +274,7 @@ export default async function CollectionDetailPage({
         <section className="py-16 px-8">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold mb-6">Применение</h2>
-            <p className="text-lg text-gray-700 mb-12 max-w-3xl">
+            <p className="text-lg text-muted-foreground mb-12 max-w-3xl">
               Коллекция {collection.title} разработана для универсальности в
               различных категориях продукции. Вот некоторые ключевые области
               применения кож этого сезона.
@@ -284,9 +284,9 @@ export default async function CollectionDetailPage({
               {["Обувь", "Аксессуары", "Одежда", "Товары для дома"].map(
                 (application, index) => (
                   <div key={index} className="text-center">
-                    <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <div className="w-20 h-20 bg-muted rounded-full mx-auto mb-4"></div>
                     <h3 className="text-xl font-bold mb-2">{application}</h3>
-                    <p className="text-gray-700">
+                    <p className="text-muted-foreground">
                       Кожи, специально разработанные для превосходства в
                       применении в области {application.toLowerCase()}.
                     </p>
@@ -298,7 +298,7 @@ export default async function CollectionDetailPage({
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 px-8 bg-gray-900 text-white">
+        <section className="py-16 px-8 bg-primary text-primary-foreground">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">
               Заинтересованы в этой коллекции?
@@ -310,13 +310,13 @@ export default async function CollectionDetailPage({
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-white text-gray-900 rounded-full"
+                className="px-6 py-3 bg-background text-foreground rounded-full"
               >
                 Запросить образцы
               </Link>
               <Link
                 href="/contact"
-                className="px-6 py-3 border border-white text-white rounded-full"
+                className="px-6 py-3 border border-background text-primary-foreground rounded-full"
               >
                 Связаться с отделом продаж
               </Link>

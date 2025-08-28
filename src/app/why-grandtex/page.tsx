@@ -45,7 +45,7 @@ export default function WhyGrandtexPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative w-full h-[50vh] bg-black text-white mt-20">
+      <section className="relative w-full h-[50vh] bg-primary text-primary-foreground mt-20">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/2560085916.jpeg"
@@ -96,7 +96,7 @@ export default function WhyGrandtexPage() {
       </section>
 
       {/* Advantages Grid */}
-      <section className="py-16 px-8 bg-gray-50">
+      <section className="py-16 px-8 bg-secondary">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Преимущества GRANDTEX
@@ -104,10 +104,10 @@ export default function WhyGrandtexPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {advantages.map((advantage, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-sm">
+              <div key={index} className="bg-background p-8 rounded-lg shadow-sm">
                 <div className="text-4xl mb-4">{advantage.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{advantage.title}</h3>
-                <p className="text-gray-700">{advantage.description}</p>
+                <p className="text-muted-foreground">{advantage.description}</p>
               </div>
             ))}
           </div>
@@ -142,7 +142,7 @@ export default function WhyGrandtexPage() {
               <div className="mt-8">
                 <Link
                   href="/about-grandtex"
-                  className="px-6 py-3 border border-black rounded-full inline-block"
+                  className="px-6 py-3 border border-primary rounded-full inline-block"
                 >
                   Meet Our Team
                 </Link>
@@ -164,7 +164,7 @@ export default function WhyGrandtexPage() {
       </section>
 
       {/* Technology & Innovation */}
-      <section className="py-16 px-8 bg-gray-50">
+      <section className="py-16 px-8 bg-secondary">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2 order-2 lg:order-1">
@@ -205,7 +205,7 @@ export default function WhyGrandtexPage() {
               <div className="mt-8">
                 <Link
                   href="/tanneries"
-                  className="px-6 py-3 border border-black rounded-full inline-block"
+                  className="px-6 py-3 border border-primary rounded-full inline-block"
                 >
                   Исследуйте наши предприятия
                 </Link>
@@ -224,33 +224,33 @@ export default function WhyGrandtexPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-primary-foreground text-2xl mx-auto mb-4">
                 1
               </div>
               <h3 className="text-xl font-bold mb-3">Понимание</h3>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Мы уделяем время глубокому пониманию ваших потребностей, задач и
                 видения, формируя основу успешного сотрудничества.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-primary-foreground text-2xl mx-auto mb-4">
                 2
               </div>
               <h3 className="text-xl font-bold mb-3">Сотрудничество</h3>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Наша команда тесно работает с вашей, объединяя опыт для
                 разработки решений, соответствующих вашим требованиям.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-primary-foreground text-2xl mx-auto mb-4">
                 3
               </div>
               <h3 className="text-xl font-bold mb-3">Результат</h3>
-              <p className="text-gray-700">
+              <p className="text-muted-foreground">
                 Мы выполняем работу с точностью, предоставляя высококачественные
                 кожи вовремя и согласно спецификациям, обеспечивая надёжную
                 поддержку на всех этапах.
@@ -261,14 +261,14 @@ export default function WhyGrandtexPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-8 bg-gray-900 text-white">
+      <section className="py-16 px-8 bg-primary text-primary-foreground">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Что говорят наши партнёры
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-800 p-8 rounded-lg">
+            <div className="bg-muted p-8 rounded-lg">
               <div className="text-2xl text-accent mb-4">"</div>
               <p className="text-lg mb-6">
                 GRANDTEX постоянно поставляет исключительную кожу,
@@ -278,13 +278,13 @@ export default function WhyGrandtexPage() {
               </p>
               <div>
                 <p className="font-bold">Sarah Johnson</p>
-                <p className="text-gray-400">
+                <p className="text-muted-foreground">
                   Директор по материалам, глобальный обувной бренд
                 </p>
               </div>
             </div>
 
-            <div className="bg-gray-800 p-8 rounded-lg">
+            <div className="bg-muted p-8 rounded-lg">
               <div className="text-2xl text-accent mb-4">"</div>
               <p className="text-lg mb-6">
                 Как небольшое производство, мы ценим готовность GRANDTEX
@@ -293,7 +293,7 @@ export default function WhyGrandtexPage() {
               </p>
               <div>
                 <p className="font-bold">Michael Chen</p>
-                <p className="text-gray-400">
+                <p className="text-muted-foreground">
                   Основатель, ремесленные изделия из кожи
                 </p>
               </div>
@@ -314,7 +314,7 @@ export default function WhyGrandtexPage() {
           </p>
           <Link
             href="/contact"
-            className="px-8 py-3 bg-black text-white rounded-full text-lg inline-block"
+            className="px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg inline-block"
           >
             Свяжитесь с нами
           </Link>

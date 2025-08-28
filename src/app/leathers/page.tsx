@@ -64,7 +64,7 @@ export default function LeathersPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative w-full h-[40vh] bg-black text-white mt-20">
+      <section className="relative w-full h-[40vh] bg-primary text-primary-foreground mt-20">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/3442149313.jpeg"
@@ -87,17 +87,17 @@ export default function LeathersPage() {
       </section>
 
       {/* Filters Section */}
-      <section className="py-8 px-8 bg-gray-50 border-b border-gray-200">
+      <section className="py-8 px-8 bg-secondary border-b border-border">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap gap-4 justify-between items-center">
             <div className="flex flex-wrap gap-4">
-              <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
+              <select className="px-4 py-2 border border-border rounded-md bg-background">
                 <option>Все коллекции</option>
                 <option>Весна-Лето 27</option>
                 <option>Осень-Зима 26</option>
               </select>
 
-              <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
+              <select className="px-4 py-2 border border-border rounded-md bg-background">
                 <option>Все типы</option>
                 <option>Гладкая</option>
                 <option>Нубук</option>
@@ -105,7 +105,7 @@ export default function LeathersPage() {
                 <option>Подкладочная</option>
               </select>
 
-              <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
+              <select className="px-4 py-2 border border-border rounded-md bg-background">
                 <option>Все обработки</option>
                 <option>Анилиновая</option>
                 <option>Полуанилиновая</option>
@@ -115,8 +115,8 @@ export default function LeathersPage() {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">Сортировать:</span>
-              <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
+              <span className="text-sm text-muted-foreground">Сортировать:</span>
+              <select className="px-4 py-2 border border-border rounded-md bg-background">
                 <option>Новинки</option>
                 <option>Название (А-Я)</option>
                 <option>Коллекция</option>
@@ -134,7 +134,7 @@ export default function LeathersPage() {
               <Link
                 key={product.id}
                 href={`/leathers/${product.id}`}
-                className="group border border-gray-200 rounded-md overflow-hidden hover:shadow-md transition-shadow"
+                className="group border border-border rounded-md overflow-hidden hover:shadow-md transition-shadow"
               >
                 <div className="relative aspect-square">
                   <Image
@@ -148,25 +148,25 @@ export default function LeathersPage() {
                   <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     Коллекция {product.collection}
                   </p>
 
                   <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
                     <div>
-                      <span className="text-xs font-medium text-gray-500">
+                      <span className="text-xs font-medium text-muted-foreground">
                         ТИП
                       </span>
                       <p className="text-sm">{product.type}</p>
                     </div>
                     <div>
-                      <span className="text-xs font-medium text-gray-500">
+                      <span className="text-xs font-medium text-muted-foreground">
                         ОТДЕЛКА
                       </span>
                       <p className="text-sm">{product.finish}</p>
                     </div>
                     <div>
-                      <span className="text-xs font-medium text-gray-500">
+                      <span className="text-xs font-medium text-muted-foreground">
                         ОБРАБОТКА
                       </span>
                       <p className="text-sm">{product.treatment}</p>
@@ -180,7 +180,7 @@ export default function LeathersPage() {
       </section>
 
       {/* Request Samples CTA */}
-      <section className="py-16 px-8 bg-gray-100">
+      <section className="py-16 px-8 bg-muted">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Запросить образцы</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
@@ -189,7 +189,7 @@ export default function LeathersPage() {
           </p>
           <Link
             href="/contact"
-            className="px-8 py-3 bg-black text-white rounded-full text-lg inline-block"
+            className="px-8 py-3 bg-primary text-primary-foreground rounded-full text-lg inline-block"
           >
             Свяжитесь с нами
           </Link>

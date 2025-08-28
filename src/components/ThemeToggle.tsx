@@ -17,7 +17,7 @@ export default function ThemeToggle({ className }: ThemeToggleProps) {
       onClick={toggle}
       aria-label="Переключить тему"
       className={cn(
-        "p-2 rounded-md transition-colors hover:bg-gray-200 dark:hover:bg-gray-700",
+        "p-2 rounded-md transition-colors hover:bg-muted dark:hover:bg-muted",
         className
       )}
     >
