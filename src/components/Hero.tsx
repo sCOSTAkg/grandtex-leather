@@ -84,10 +84,10 @@ export default function Hero() {
           </div>
           <div className="mt-8 flex justify-center md:justify-start">
             <Link
-              href="/leathers"
+              href="/products"
               className="px-8 py-3 border border-primary text-foreground rounded-full inline-block hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
             >
-              Исследуйте наши кожи
+              Исследуйте нашу одежду
             </Link>
           </div>
         </div>

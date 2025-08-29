@@ -230,15 +230,15 @@ export default async function CollectionDetailPage({
         </section>
 
         {/* Collection Products */}
-        <section className="py-16 px-8 bg-secondary">
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-bold mb-12">Избранные кожи</h2>
+          <section className="py-16 px-8 bg-secondary">
+            <div className="container mx-auto">
+              <h2 className="text-3xl font-bold mb-12">Избранные товары</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {collection.products.map((product) => (
                 <Link
                   key={product.id}
-                  href={`/leathers/${product.id}`}
+                  href={`/products/${product.id}`}
                   className="group bg-background border border-border rounded-md overflow-hidden hover:shadow-md transition-shadow"
                 >
                   <div className="relative aspect-square">
@@ -260,12 +260,12 @@ export default async function CollectionDetailPage({
             </div>
 
             <div className="mt-12 text-center">
-              <Link
-                href="/leathers"
-                className="px-6 py-3 border border-primary rounded-full inline-block"
-              >
-                Смотреть все кожи
-              </Link>
+                <Link
+                  href="/products"
+                  className="px-6 py-3 border border-primary rounded-full inline-block"
+                >
+                  Смотреть все товары
+                </Link>
             </div>
           </div>
         </section>
