@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductCard({
   title,
@@ -16,7 +17,10 @@ export default function ProductCard({
   image: string;
 }) {
   return (
-    <a href={href} className="group relative overflow-hidden rounded-xl bg-secondary">
+    <Link
+      href={href}
+      className="group relative overflow-hidden rounded-xl bg-secondary"
+    >
       <Image
         src={image}
         alt={title}
@@ -32,6 +36,6 @@ export default function ProductCard({
           {type} • {finish}
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
