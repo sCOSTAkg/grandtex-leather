@@ -1,5 +1,11 @@
 [images]
-  remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
+  remote_images = [
+    "https://source.unsplash.com/.*",
+    "https://images.unsplash.com/.*",
+    "https://ext.same-assets.com/.*",
+    "https://ugc.same-assets.com/.*",
+    "https://picsum.photos/.*",
+  ]
 
 [build]
   command = "bun run build"
@@ -10,3 +16,4 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
