@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function LeatherCard({
+export default function ProductCard({
   title,
   collection,
   type,
