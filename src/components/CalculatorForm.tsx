@@ -10,6 +10,7 @@ import { useState } from 'react';
 export default function CalculatorForm() {
   const [quantity, setQuantity] = useState<number>(100);
   const [pricePerItem] = useState<number>(100); // базовая цена за единицу
+  const [error, setError] = useState<string>('');
 
   /**
    * Determines the discount based on the number of items. Returns a
@@ -20,6 +21,26 @@ export default function CalculatorForm() {
     if (qty >= 500) return 0.9; // 10% скидка
     if (qty >= 200) return 0.95; // 5% скидка
     return 1;
+  };
+
+  const handleQuantityChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    const value = Number(e.target.value);
+
+    if (!Number.isFinite(value) || value < 100) {
+      setError('Минимальное количество — 100');
+      setQuantity(100);
+    } else {
+      setError('');
+      setQuantity(value);
+    }
+  };
+
+  const handleQuantityBlur = (): void => {
+    if (quantity < 100) {
+      setQuantity(100);
+    }
   };
 
   const discount = getDiscount(quantity);
@@ -42,9 +63,11 @@ export default function CalculatorForm() {
         min={100}
         step={1}
         value={quantity}
-        onChange={(e) => setQuantity(Number(e.target.value))}
+        onChange={handleQuantityChange}
+        onBlur={handleQuantityBlur}
         className="w-full mb-4 rounded-md border border-border bg-background px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
       />
+      {error && <p className="mb-4 text-sm text-destructive">{error}</p>}
       <div className="space-y-2 text-sm text-foreground">
         <p>Цена за единицу: {finalPricePerItem.toFixed(2)} руб.</p>
         <p>Итого за заказ: {totalCost.toFixed(2)} руб.</p>
