@@ -39,8 +39,8 @@ export default function HeroPrime() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
           className="mt-8 flex gap-4"
         >
-          <Link href="/leathers" className="px-5 py-3 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition">
-            Explore Leathers
+          <Link href="/products" className="px-5 py-3 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition">
+            Explore Products
           </Link>
           <Link href="/sustainability" className="px-5 py-3 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80 transition">
             Sustainability

@@ -20,7 +20,7 @@ export interface NavLink {
  * sub-links as your application grows.
  */
 export const defaultNavLinks: NavLink[] = [
-  { title: "Leathers", href: "/leathers" },
+  { title: "Products", href: "/products" },
   { title: "Why GRANDTEX", href: "/why-grandtex" },
   { title: "Sustainability", href: "/sustainability" },
   { title: "Tanneries", href: "/tanneries" },

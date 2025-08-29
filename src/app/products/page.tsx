@@ -2,62 +2,68 @@ import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
 
-export default function LeathersPage() {
-  // Sample leather products data
-  const leatherProducts = [
+export default function ProductsPage() {
+  // Sample clothing products catalog
+  const clothingProducts = [
     {
-      id: "opulent",
-      name: "Opulent",
-      collection: "Весна-Лето 27",
-      type: "Гладкая",
-      finish: "Естественная барабанная отделка",
-      treatment: "Полуанилиновая",
-      image: "https://ext.same-assets.com/1118492138/331861169.jpeg",
+      id: "classic-tee",
+      name: "Classic Tee",
+      collection: "Лето 27",
+      category: "Футболки",
+      sizes: ["S", "M", "L", "XL"],
+      composition: "100% хлопок",
+      image:
+        "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80",
     },
     {
-      id: "papyrus",
-      name: "Papyrus",
-      collection: "Весна-Лето 27",
-      type: "Гладкая",
-      finish: "Естественная барабанная отделка",
-      treatment: "Специальная",
-      image: "https://ext.same-assets.com/1118492138/3988412587.jpeg",
+      id: "denim-jacket",
+      name: "Denim Jacket",
+      collection: "Осень 26",
+      category: "Куртки",
+      sizes: ["M", "L", "XL"],
+      composition: "100% хлопок (деним)",
+      image:
+        "https://images.unsplash.com/photo-1520975967284-cf9d0b05a76a?auto=format&fit=crop&w=800&q=80",
     },
     {
-      id: "boho",
-      name: "Boho",
-      collection: "Весна-Лето 27",
-      type: "Гладкая",
-      finish: "Тиснённая",
-      treatment: "Анилиновая",
-      image: "https://ext.same-assets.com/1118492138/3513175735.jpeg",
+      id: "flowy-dress",
+      name: "Flowy Dress",
+      collection: "Лето 27",
+      category: "Платья",
+      sizes: ["S", "M", "L"],
+      composition: "Вискоза",
+      image:
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
     },
     {
-      id: "sterling",
-      name: "Sterling",
-      collection: "Весна-Лето 27",
-      type: "Гладкая",
-      finish: "Гладкая",
-      treatment: "Анилиновая",
-      image: "https://ext.same-assets.com/1118492138/3442149313.jpeg",
+      id: "athletic-shorts",
+      name: "Athletic Shorts",
+      collection: "Лето 27",
+      category: "Шорты",
+      sizes: ["M", "L", "XL"],
+      composition: "Полиэстер",
+      image:
+        "https://images.unsplash.com/photo-1511827490797-3e7bf90c16e3?auto=format&fit=crop&w=800&q=80",
     },
     {
-      id: "vortex",
-      name: "Vortex",
-      collection: "Осень-Зима 26",
-      type: "Нубук",
-      finish: "Тиснённая",
-      treatment: "Вощёная",
-      image: "https://ext.same-assets.com/1118492138/1400919951.jpeg",
+      id: "wool-sweater",
+      name: "Wool Sweater",
+      collection: "Зима 26",
+      category: "Свитеры",
+      sizes: ["S", "M", "L"],
+      composition: "Шерсть",
+      image:
+        "https://images.unsplash.com/photo-1517341729106-01f7cc19d5a1?auto=format&fit=crop&w=800&q=80",
     },
     {
-      id: "meridian",
-      name: "Meridian",
-      collection: "Осень-Зима 26",
-      type: "Спилок",
-      finish: "Естественная барабанная отделка",
-      treatment: "Специальная",
-      image: "https://ext.same-assets.com/1118492138/542915801.jpeg",
+      id: "chino-pants",
+      name: "Chino Pants",
+      collection: "Осень 26",
+      category: "Брюки",
+      sizes: ["S", "M", "L", "XL"],
+      composition: "Хлопок, эластан",
+      image:
+        "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80",
     },
   ];
 
@@ -67,8 +73,8 @@ export default function LeathersPage() {
       <section className="relative w-full h-[40vh] bg-primary text-primary-foreground mt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://ext.same-assets.com/1118492138/3442149313.jpeg"
-            alt="Наши кожи"
+            src="https://images.unsplash.com/photo-1521335629791-ce4aec67ddaf?auto=format&fit=crop&w=1600&q=80"
+            alt="Наша одежда"
             fill
             style={{ objectFit: "cover", opacity: 0.7 }}
             priority
@@ -77,10 +83,10 @@ export default function LeathersPage() {
 
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-8">
-            <h1 className="text-5xl font-bold mb-4">Наши кожи</h1>
+            <h1 className="text-5xl font-bold mb-4">Каталог одежды</h1>
             <p className="text-xl max-w-2xl">
-              Ознакомьтесь с нашими премиальными кожаными продуктами, созданными
-              с мастерством и устойчивыми практиками.
+              Ознакомьтесь с нашим ассортиментом современной и функциональной одежды
+              для разных сезонов и стилей.
             </p>
           </div>
         </div>
@@ -93,24 +99,29 @@ export default function LeathersPage() {
             <div className="flex flex-wrap gap-4">
               <select className="px-4 py-2 border border-border rounded-md bg-background">
                 <option>Все коллекции</option>
-                <option>Весна-Лето 27</option>
-                <option>Осень-Зима 26</option>
+                <option>Лето 27</option>
+                <option>Осень 26</option>
+                <option>Зима 26</option>
               </select>
 
               <select className="px-4 py-2 border border-border rounded-md bg-background">
-                <option>Все типы</option>
-                <option>Гладкая</option>
-                <option>Нубук</option>
-                <option>Спилок</option>
-                <option>Подкладочная</option>
+                <option>Все категории</option>
+                <option>Футболки</option>
+                <option>Куртки</option>
+                <option>Платья</option>
+                <option>Шорты</option>
+                <option>Свитеры</option>
+                <option>Брюки</option>
               </select>
 
               <select className="px-4 py-2 border border-border rounded-md bg-background">
-                <option>Все обработки</option>
-                <option>Анилиновая</option>
-                <option>Полуанилиновая</option>
-                <option>Специальная</option>
-                <option>Вощёная</option>
+                <option>Все материалы</option>
+                <option>Хлопок</option>
+                <option>Деним</option>
+                <option>Вискоза</option>
+                <option>Полиэстер</option>
+                <option>Шерсть</option>
+                <option>Смесь</option>
               </select>
             </div>
 
@@ -130,10 +141,10 @@ export default function LeathersPage() {
       <section className="py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {leatherProducts.map((product) => (
+            {clothingProducts.map((product) => (
               <Link
                 key={product.id}
-                href={`/leathers/${product.id}`}
+                href={`/products/${product.id}`}
                 className="group border border-border rounded-md overflow-hidden hover:shadow-md transition-shadow"
               >
                 <div className="relative aspect-square">
@@ -155,21 +166,21 @@ export default function LeathersPage() {
                   <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
                     <div>
                       <span className="text-xs font-medium text-muted-foreground">
-                        ТИП
+                        КАТЕГОРИЯ
                       </span>
-                      <p className="text-sm">{product.type}</p>
+                      <p className="text-sm">{product.category}</p>
                     </div>
                     <div>
                       <span className="text-xs font-medium text-muted-foreground">
-                        ОТДЕЛКА
+                        РАЗМЕРЫ
                       </span>
-                      <p className="text-sm">{product.finish}</p>
+                      <p className="text-sm">{product.sizes.join(", ")}</p>
                     </div>
-                    <div>
+                    <div className="col-span-2">
                       <span className="text-xs font-medium text-muted-foreground">
-                        ОБРАБОТКА
+                        СОСТАВ
                       </span>
-                      <p className="text-sm">{product.treatment}</p>
+                      <p className="text-sm">{product.composition}</p>
                     </div>
                   </div>
                 </div>
