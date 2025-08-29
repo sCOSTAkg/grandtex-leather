@@ -20,7 +20,7 @@ interface HeaderProps {
 }
 
 const headerClasses =
-  "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent";
+  "fixed left-1/2 top-4 -translate-x-1/2 z-50 w-full transition-all duration-300 bg-transparent";
 const textClasses = "text-foreground";
 
 export default function Header({ links }: HeaderProps) {
@@ -33,9 +33,18 @@ export default function Header({ links }: HeaderProps) {
         .querySelector("header")
         ?.setAttribute("data-scrolled", window.scrollY > 20 ? "true" : "false");
     };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("keydown", onKey);
+    };
   }, []);
 
   /**
@@ -63,10 +72,10 @@ export default function Header({ links }: HeaderProps) {
     <header
       className={
         headerClasses +
-        " data-[scrolled=true]:backdrop-blur data-[scrolled=true]:bg-background/70"
+        " data-[scrolled=true]:w-fit data-[scrolled=true]:rounded-xl data-[scrolled=true]:bg-background/70 data-[scrolled=true]:backdrop-blur data-[scrolled=true]:shadow-lg"
       }
     >
-      <div className="container flex h-16 items-center justify-between">
+      <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between gap-4 px-4 md:px-6">
         <Link href="/" className="font-bold text-xl text-primary">
           GRANDTEX
         </Link>
