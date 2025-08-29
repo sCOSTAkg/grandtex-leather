@@ -76,23 +76,41 @@ export const initProductHoverEffects = () => {
     return;
   }
 
+  const handlers: {
+    card: Element;
+    enter: () => void;
+    leave: () => void;
+  }[] = [];
+
   productCards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
+    const handleMouseEnter = () => {
       card.classList.add("scale-[1.02]");
 
       const image = card.querySelector("[data-product-image]");
       if (image) {
         image.classList.add("scale-110");
       }
-    });
+    };
 
-    card.addEventListener("mouseleave", () => {
+    const handleMouseLeave = () => {
       card.classList.remove("scale-[1.02]");
 
       const image = card.querySelector("[data-product-image]");
       if (image) {
         image.classList.remove("scale-110");
       }
-    });
+    };
+
+    card.addEventListener("mouseenter", handleMouseEnter);
+    card.addEventListener("mouseleave", handleMouseLeave);
+
+    handlers.push({ card, enter: handleMouseEnter, leave: handleMouseLeave });
   });
+
+  return () => {
+    handlers.forEach(({ card, enter, leave }) => {
+      card.removeEventListener("mouseenter", enter);
+      card.removeEventListener("mouseleave", leave);
+    });
+  };
 };
