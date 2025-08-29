@@ -3,8 +3,8 @@
 import Link from 'next/link';
 
 /**
- * Call‑to‑action section inviting visitors to get in touch. The contrasting
- * background and clear messaging draw the eye at the end of the page.
+ * Секция призыва к действию, приглашающая посетителей связаться с нами.
+ * Контрастный фон и понятный текст привлекают внимание в конце страницы.
  */
 export default function CTA() {
   return (

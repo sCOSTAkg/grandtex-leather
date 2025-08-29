@@ -8,7 +8,7 @@ export default function Hero() {
       <AnimatedSection speed={0.3} className="absolute inset-0 z-0">
         <Image
           src="https://ext.same-assets.com/1118492138/3414069527.jpeg"
-          alt="Фоновая текстура кожи"
+          alt="Фоновая текстура ткани"
           fill
           style={{ objectFit: "cover", opacity: 0.2 }}
           priority
@@ -24,7 +24,7 @@ export default function Hero() {
           </h1>
           <div className="mt-6 max-w-xl">
             <p className="text-lg sm:text-2xl font-medium">
-              Ваш партнёр по кожевенному
+              Ваш партнёр по швейному
               <br />
               производству, ориентированному на будущее.
             </p>
@@ -64,7 +64,7 @@ export default function Hero() {
               >
                 <Image
                   src="https://ext.same-assets.com/1118492138/3036160331.jpeg"
-                  alt="Наши кожевенные заводы"
+                  alt="Наши фабрики"
                   fill
                   style={{ objectFit: "cover" }}
                   className="transition-transform duration-500 group-hover:scale-110"
@@ -72,7 +72,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-6">
                   <div>
                     <span className="text-foreground font-medium text-xl mb-1 block">
-                      Наши кожевенные заводы
+                      Наши фабрики
                     </span>
                     <p className="text-muted-foreground text-sm">
                       Ознакомьтесь с нашими передовыми производствами
@@ -84,10 +84,10 @@ export default function Hero() {
           </div>
           <div className="mt-8 flex justify-center md:justify-start">
             <Link
-              href="/leathers"
+              href="/products"
               className="px-8 py-3 border border-primary text-foreground rounded-full inline-block hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
             >
-              Исследуйте наши кожи
+              Изучите нашу продукцию
             </Link>
           </div>
         </div>

@@ -12,25 +12,29 @@ interface Highlight {
 }
 
 /**
- * Displays recent news or blog posts with hover and scroll animations.
+ * Отображает недавние новости или статьи с анимациями при наведении и
+ * прокрутке.
  */
 export default function Highlights() {
   const highlights: Highlight[] = [
     {
-      title: "New EcoSoft line launched",
-      excerpt: "Our softest casual leather now comes with 40% less water usage.",
+      title: "Запущена новая линия EcoSoft",
+      excerpt:
+        "Наш самый мягкий повседневный продукт теперь требует на 40% меньше воды.",
       image: "https://picsum.photos/seed/highlight1/800/600",
       href: "/highlights/ecosoft",
     },
     {
-      title: "PrimeFlex wins innovation award",
-      excerpt: "Recognised for durability and performance in athletic footwear.",
+      title: "PrimeFlex получает премию за инновации",
+      excerpt:
+        "Отмечен за долговечность и эффективность в спортивной обуви.",
       image: "https://picsum.photos/seed/highlight2/800/600",
       href: "/highlights/primeflex-award",
     },
     {
-      title: "Tanneries reach carbon milestone",
-      excerpt: "Our facilities now run on 80% renewable energy worldwide.",
+      title: "Фабрики достигли углеродной вехи",
+      excerpt:
+        "Наши производства теперь работают на 80% возобновляемой энергии по всему миру.",
       image: "https://picsum.photos/seed/highlight3/800/600",
       href: "/highlights/carbon-milestone",
     },
@@ -39,7 +43,7 @@ export default function Highlights() {
   return (
     <section className="bg-secondary">
       <div className="container py-16">
-        <h2 className="text-3xl md:text-4xl font-semibold">Highlights</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold">Новости</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {highlights.map((item, i) => (
             <motion.article
@@ -61,7 +65,7 @@ export default function Highlights() {
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{item.excerpt}</p>
                 <Link href={item.href} className="mt-4 inline-block text-primary hover:underline">
-                  Read more
+                  Подробнее
                 </Link>
               </div>
             </motion.article>

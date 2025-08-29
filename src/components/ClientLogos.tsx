@@ -8,9 +8,8 @@ interface Client {
 }
 
 /**
- * Displays a carousel/grid of client logos. The component uses placeholder
- * images from Unsplash to illustrate the layout. Replace the `logo` URLs with
- * actual client logos as needed.
+ * Отображает карусель/сетку логотипов клиентов. В примере используются
+ * изображения-заглушки с Unsplash, их следует заменить реальными логотипами.
  */
 export default function ClientLogos() {
   const clients: Client[] = [

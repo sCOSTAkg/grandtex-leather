@@ -13,10 +13,10 @@ interface Project {
 }
 
 /**
- * Portfolio section displays recent sewing projects in a responsive grid. Each
- * project card reveals a call‑to‑action on hover, encouraging visitors to
- * explore further. The sample data can be replaced with real project
- * information or fetched from an API.
+ * Раздел портфолио отображает недавние швейные проекты в адаптивной сетке.
+ * При наведении карточка проекта показывает призыв к действию, побуждая
+ * посетителей узнать больше. Примерные данные можно заменить реальными или
+ * получить из API.
  */
 export default function Portfolio() {
   const projects: Project[] = [

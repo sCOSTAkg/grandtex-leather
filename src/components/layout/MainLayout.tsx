@@ -3,9 +3,9 @@ import Footer from './Footer';
 import type { ReactNode } from 'react';
 
 /**
- * MainLayout composes the Header, page content and Footer. It accounts for
- * the fixed header by adding top padding to the main element. Use this
- * layout as a wrapper for all page-level components.
+ * MainLayout объединяет Header, содержимое страницы и Footer. Учёт фиксированного
+ * заголовка достигается добавлением верхнего отступа к основному элементу.
+ * Используйте этот макет как обёртку для компонентов страниц.
  */
 interface MainLayoutProps {
   children: ReactNode;
