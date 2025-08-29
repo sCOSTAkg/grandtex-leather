@@ -1,5 +1,5 @@
 import HeroPrime from "@/components/HeroPrime";
-import LeatherCard from "@/components/LeatherCard";
+import ProductCard from "@/components/ProductCard";
 import AnimatedSection from "@/components/AnimatedSection";
 import SustainabilityPillars from "@/components/SustainabilityPillars";
 import LogoMarquee from "@/components/LogoMarquee";
@@ -13,34 +13,34 @@ export default function Home() {
 
       <AnimatedSection className="bg-background">
         <div className="container py-20">
-          <h2 className="text-3xl md:text-4xl font-semibold">Leathers</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold">Collections</h2>
           <p className="mt-3 text-muted-foreground max-w-2xl">
-            A wide range of athletic and casual leathers, crafted for performance, style and consistency.
+            A curated selection of apparel staples, built for comfort, durability, and style.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <LeatherCard
-              title="PrimeFlex"
-              collection="Athletic"
-              type="Calf"
-              finish="Matte"
-              href="/leathers/primeflex"
-              image="https://picsum.photos/seed/primeflex/1200/800"
-            />
-            <LeatherCard
-              title="EcoSoft"
+            <ProductCard
+              title="Classic Tee"
               collection="Casual"
-              type="Cow"
-              finish="Soft"
-              href="/leathers/ecosoft"
-              image="https://picsum.photos/seed/ecosoft/1200/800"
+              type="Cotton"
+              finish="Regular fit"
+              href="/collections/classic-tee"
+              image="https://picsum.photos/seed/classictee/1200/800"
             />
-            <LeatherCard
-              title="TrailGuard"
+            <ProductCard
+              title="Denim Jacket"
+              collection="Denim"
+              type="Denim"
+              finish="Slim fit"
+              href="/collections/denim-jacket"
+              image="https://picsum.photos/seed/denimjacket/1200/800"
+            />
+            <ProductCard
+              title="Trail Hoodie"
               collection="Outdoor"
-              type="Buffalo"
-              finish="Oiled"
-              href="/leathers/trailguard"
-              image="https://picsum.photos/seed/trailguard/1200/800"
+              type="Fleece"
+              finish="Relaxed fit"
+              href="/collections/trail-hoodie"
+              image="https://picsum.photos/seed/trailhoodie/1200/800"
             />
           </div>
         </div>

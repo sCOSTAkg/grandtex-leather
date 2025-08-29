@@ -9,7 +9,7 @@ export default function HeroPrime() {
       {/* video background (можно заменить на свой .mp4) */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
-        src="https://videos.pexels.com/video-files/856966/856966-uhd_2560_1440_25fps.mp4"
+        src="https://videos.pexels.com/video-files/3772666/3772666-hd_1920_1080_25fps.mp4"
         autoPlay
         muted
         loop
@@ -23,7 +23,7 @@ export default function HeroPrime() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-4xl md:text-6xl font-semibold leading-tight tracking-tight"
         >
-          Accelerate Ahead.
+          Stitching Your Vision.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 24 }}
@@ -31,7 +31,7 @@ export default function HeroPrime() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
           className="mt-4 max-w-xl text-lg md:text-xl text-muted-foreground"
         >
-          Future-forward tannery expertise for brands of every size.
+          Full-service garment manufacturing for brands and designers.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -39,11 +39,11 @@ export default function HeroPrime() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
           className="mt-8 flex gap-4"
         >
-          <Link href="/leathers" className="px-5 py-3 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition">
-            Explore Leathers
+          <Link href="/services" className="px-5 py-3 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition">
+            Our Services
           </Link>
-          <Link href="/sustainability" className="px-5 py-3 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80 transition">
-            Sustainability
+          <Link href="/contact" className="px-5 py-3 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80 transition">
+            Request a Quote
           </Link>
         </motion.div>
       </div>
