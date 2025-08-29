@@ -10,33 +10,33 @@ interface Pillar {
 }
 
 /**
- * Displays the four pillars of the "Consciously Crafted" strategy with
- * subtle animations when the cards enter the viewport.
+ * Отображает четыре столпа стратегии «Consciously Crafted» с лёгкими
+ * анимациями при появлении карточек в области видимости.
  */
 export default function SustainabilityPillars() {
   const pillars: Pillar[] = [
     {
-      title: "Operational Excellence",
+      title: "Операционное совершенство",
       description:
-        "Efficient resource use, waste reduction and pollution prevention across our tanneries.",
+        "Эффективное использование ресурсов, сокращение отходов и предотвращение загрязнений на наших фабриках.",
       icon: <Factory className="h-8 w-8 text-primary" />,
     },
     {
-      title: "Circularity",
+      title: "Замкнутый цикл",
       description:
-        "Designing products with a full life-cycle approach and finding new uses for by-products.",
+        "Проектирование продукции с учётом полного жизненного цикла и поиск новых применений для побочных материалов.",
       icon: <Recycle className="h-8 w-8 text-primary" />,
     },
     {
-      title: "Climate Action",
+      title: "Климатические действия",
       description:
-        "Investing in renewable energy and striving for carbon neutrality by 2030.",
+        "Инвестиции в возобновляемую энергию и стремление к углеродной нейтральности к 2030 году.",
       icon: <Sun className="h-8 w-8 text-primary" />,
     },
     {
-      title: "Social Impact",
+      title: "Социальное воздействие",
       description:
-        "Fair labour practices and community initiatives in every region where we operate.",
+        "Справедливые условия труда и общественные инициативы в каждом регионе, где мы работаем.",
       icon: <Users className="h-8 w-8 text-primary" />,
     },
   ];
@@ -51,7 +51,7 @@ export default function SustainabilityPillars() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-semibold"
         >
-          Sustainability
+          Устойчивое развитие
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 24 }}
@@ -60,7 +60,7 @@ export default function SustainabilityPillars() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-3 text-muted-foreground max-w-2xl"
         >
-          Consciously Crafted strategy across four pillars: Operational Excellence, Circularity, Climate Action and Social Impact.
+          Стратегия Consciously Crafted охватывает четыре направления: операционное совершенство, замкнутый цикл, климатические действия и социальное воздействие.
         </motion.p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((pillar, i) => (

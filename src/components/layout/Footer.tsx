@@ -3,10 +3,9 @@
 import Link from 'next/link';
 
 /**
- * The site footer. Organised into four columns to mirror the structure
- * described in the adaptation guide: services, production categories,
- * information and contact details. The final column also contains a
- * subscription form placeholder that can later be wired to a backend.
+ * Нижний колонтитул сайта. Организован в четыре колонки: услуги,
+ * направления производства, информация и контакты. В последней колонке
+ * находится форма подписки, которую позже можно связать с бэкендом.
  */
 export default function Footer() {
   return (

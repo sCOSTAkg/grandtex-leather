@@ -6,15 +6,15 @@ import { Menu, X } from 'lucide-react';
 import { defaultNavLinks, NavLink } from './navLinks';
 
 /**
- * Renders a responsive site header. On larger viewports the navigation
- * items are displayed inline. On mobile a hamburger icon toggles a
- * slide-over menu. The component uses the default navigation links but
- * accepts an optional override via props.
+ * Отрисовывает адаптивный заголовок сайта. На больших экранах пункты
+ * меню отображаются в одну строку. На мобильных устройствах иконка
+ * гамбургера открывает выезжающее меню. Компонент использует набор
+ * ссылок по умолчанию, но может принимать собственный список через
+ * пропсы.
  */
 interface HeaderProps {
   /**
-   * Override the default navigation with a custom set of links. Useful when
-   * tailoring the header for specific pages or layouts.
+   * Позволяет заменить стандартную навигацию собственным набором ссылок.
    */
   links?: NavLink[];
 }
@@ -48,8 +48,8 @@ export default function Header({ links }: HeaderProps) {
   }, []);
 
   /**
-   * Renders a list of links recursively. If a link contains subLinks, they
-   * will be displayed as an indented list below the parent on mobile.
+   * Рекурсивно отображает список ссылок. Если у пункта есть подменю,
+   * оно показывается вложенным списком на мобильных устройствах.
    */
   const renderLinks = (items: NavLink[], depth = 0) => {
     return items.map((item) => (
@@ -111,7 +111,7 @@ export default function Header({ links }: HeaderProps) {
         <button
           className={`md:hidden p-2 ${textClasses}`}
           onClick={() => setOpen((prev) => !prev)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>

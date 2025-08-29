@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
 
-export default function LeathersPage() {
-  // Sample leather products data
-  const leatherProducts = [
+export default function ProductsPage() {
+  // Пример данных о продукции
+  const products = [
     {
       id: "opulent",
       name: "Opulent",
@@ -68,7 +68,7 @@ export default function LeathersPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://ext.same-assets.com/1118492138/3442149313.jpeg"
-            alt="Наши кожи"
+            alt="Наша продукция"
             fill
             style={{ objectFit: "cover", opacity: 0.7 }}
             priority
@@ -77,9 +77,9 @@ export default function LeathersPage() {
 
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-8">
-            <h1 className="text-5xl font-bold mb-4">Наши кожи</h1>
+            <h1 className="text-5xl font-bold mb-4">Наша продукция</h1>
             <p className="text-xl max-w-2xl">
-              Ознакомьтесь с нашими премиальными кожаными продуктами, созданными
+              Ознакомьтесь с нашей премиальной продукцией, созданной
               с мастерством и устойчивыми практиками.
             </p>
           </div>
@@ -130,10 +130,10 @@ export default function LeathersPage() {
       <section className="py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {leatherProducts.map((product) => (
+            {products.map((product) => (
               <Link
                 key={product.id}
-                href={`/leathers/${product.id}`}
+                href={`/products/${product.id}`}
                 className="group border border-border rounded-md overflow-hidden hover:shadow-md transition-shadow"
               >
                 <div className="relative aspect-square">

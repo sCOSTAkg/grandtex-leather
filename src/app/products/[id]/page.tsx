@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
 
-// This would typically come from a database or API
-const getLeatherProduct = (id: string) => {
+// Обычно данные берутся из базы или API
+const getProduct = (id: string) => {
   const products = {
     opulent: {
       id: "opulent",
@@ -13,7 +13,7 @@ const getLeatherProduct = (id: string) => {
       finish: "Естественная барабанная отделка",
       treatment: "Полуанилиновая",
       description:
-        "Кожа Opulent имеет богатую, изысканную текстуру с превосходной глубиной цвета. Идеально подходит для люксовой обуви и аксессуаров, где требуется элегантность и долговечность.",
+        "Изделие Opulent имеет богатую, изысканную текстуру с превосходной глубиной цвета. Идеально подходит для люксовой обуви и аксессуаров, где требуется элегантность и долговечность.",
       colors: ["Чёрный", "Коричневый", "Бордовый", "Тёмно-синий", "Оливковый"],
       thickness: "1.2-1.4 мм",
       applications: ["Люксовая обувь", "Сумки", "Ремни", "Кошельки"],
@@ -33,7 +33,7 @@ const getLeatherProduct = (id: string) => {
       finish: "Естественная барабанная отделка",
       treatment: "Специальная",
       description:
-        "Кожа Papyrus имеет уникальную, тонкую текстуру, напоминающую древнюю бумагу. Эта специальная кожа обработана инновационными технологиями.",
+        "Изделие Papyrus имеет уникальную, тонкую текстуру, напоминающую древнюю бумагу. Этот материал обработан инновационными технологиями.",
       colors: ["Белый", "Кремовый", "Песочный", "Светло-серый", "Натуральный"],
       thickness: "1.0-1.2 мм",
       applications: ["Модная обувь", "Аксессуары", "Элементы обивки"],
@@ -53,7 +53,7 @@ const getLeatherProduct = (id: string) => {
       finish: "Тиснённая",
       treatment: "Анилиновая",
       description:
-        "Кожа Boho характеризуется выразительным тиснёным рисунком, придающим изделию характер и визуальную привлекательность. Анилиновая обработка позволяет сохранить естественную красоту материала.",
+        "Материал Boho характеризуется выразительным тиснёным рисунком, придающим изделию характер и визуальную привлекательность. Анилиновая обработка позволяет сохранить естественную красоту ткани.",
       colors: [
         "Коньячный",
         "Рыжий",
@@ -64,7 +64,7 @@ const getLeatherProduct = (id: string) => {
       thickness: "1.1-1.3 мм",
       applications: ["Повседневная обувь", "Сумки", "Ремни", "Мебель"],
       sustainability:
-        "Получена на кожевенных заводах с рейтингом LWG Gold и полной прослеживаемостью.",
+        "Произведена на фабриках с рейтингом LWG Gold и полной прослеживаемостью.",
       images: [
         "https://ext.same-assets.com/1118492138/3513175735.jpeg",
         "https://ext.same-assets.com/1118492138/3036160331.jpeg",
@@ -79,7 +79,7 @@ const getLeatherProduct = (id: string) => {
       finish: "Гладкая",
       treatment: "Анилиновая",
       description:
-        "Кожа Sterling обладает гладкой поверхностью с лёгким природным рисунком. Анилиновая обработка усиливает её роскошное ощущение, сохраняя природные особенности.",
+        "Материал Sterling обладает гладкой поверхностью с лёгким природным рисунком. Анилиновая обработка усиливает его роскошное ощущение, сохраняя природные особенности.",
       colors: [
         "Серо-серебристый",
         "Платиновый",
@@ -106,13 +106,13 @@ const getLeatherProduct = (id: string) => {
   return products[id as keyof typeof products] || null;
 };
 
-export default async function LeatherDetailPage({
+export default async function ProductDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const product = getLeatherProduct(id);
+  const product = getProduct(id);
 
   if (!product) {
     return (
@@ -120,13 +120,13 @@ export default async function LeatherDetailPage({
         <div className="py-40 px-8 text-center">
           <h1 className="text-3xl font-bold mb-4">Продукт не найден</h1>
           <p className="mb-8">
-            Кожаный продукт, который вы ищете, не существует или был удалён.
+            Продукция, которую вы ищете, не существует или была удалена.
           </p>
           <Link
-            href="/leathers"
+            href="/products"
             className="px-6 py-2 bg-primary text-primary-foreground rounded-full"
           >
-            Вернуться к коже
+            Вернуться к продукции
           </Link>
         </div>
       </MainLayout>
@@ -143,8 +143,8 @@ export default async function LeatherDetailPage({
               Главная
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/leathers" className="hover:text-foreground">
-              Кожи
+            <Link href="/products" className="hover:text-foreground">
+              Продукция
             </Link>
             <span className="mx-2">/</span>
             <span className="text-foreground">{product.name}</span>
@@ -290,12 +290,12 @@ export default async function LeatherDetailPage({
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {Object.values(
-                getLeatherProduct("opulent")
+                getProduct("opulent")
                   ? {
-                      papyrus: getLeatherProduct("papyrus"),
-                      boho: getLeatherProduct("boho"),
-                      sterling: getLeatherProduct("sterling"),
-                      opulent: getLeatherProduct("opulent"),
+                      papyrus: getProduct("papyrus"),
+                      boho: getProduct("boho"),
+                      sterling: getProduct("sterling"),
+                      opulent: getProduct("opulent"),
                     }
                   : {},
               )
@@ -304,7 +304,7 @@ export default async function LeatherDetailPage({
                 .map((relatedProduct) => (
                   <Link
                     key={relatedProduct.id}
-                    href={`/leathers/${relatedProduct.id}`}
+                    href={`/products/${relatedProduct.id}`}
                     className="group border border-border bg-background rounded-md overflow-hidden hover:shadow-md transition-shadow"
                   >
                     <div className="relative aspect-square">

@@ -23,7 +23,7 @@ export default function HeroPrime() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-4xl md:text-6xl font-semibold leading-tight tracking-tight"
         >
-          Accelerate Ahead.
+          Двигайтесь вперёд.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 24 }}
@@ -31,7 +31,7 @@ export default function HeroPrime() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
           className="mt-4 max-w-xl text-lg md:text-xl text-muted-foreground"
         >
-          Future-forward tannery expertise for brands of every size.
+          Передовой опыт швейного производства для брендов любого масштаба.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -39,16 +39,16 @@ export default function HeroPrime() {
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
           className="mt-8 flex gap-4"
         >
-          <Link href="/leathers" className="px-5 py-3 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition">
-            Explore Leathers
+          <Link href="/products" className="px-5 py-3 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition">
+            Изучить продукцию
           </Link>
           <Link href="/sustainability" className="px-5 py-3 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80 transition">
-            Sustainability
+            Устойчивое развитие
           </Link>
         </motion.div>
       </div>
-      {/* scroll hint */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-muted-foreground">Scroll</div>
+      {/* подсказка прокрутки */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-muted-foreground">Прокрутите вниз</div>
     </section>
   );
 }

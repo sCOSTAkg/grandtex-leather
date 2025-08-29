@@ -9,9 +9,9 @@ interface FAQItem {
 }
 
 /**
- * Frequently asked questions component. Uses local state to expand and
- * collapse answers. Can be reused on the dedicated FAQ page or embedded
- * inline on other pages.
+ * Компонент часто задаваемых вопросов. Использует локальное состояние для
+ * раскрытия и скрытия ответов. Может использоваться как на отдельной
+ * странице FAQ, так и внутри других страниц.
  */
 export default function FAQ() {
   const items: FAQItem[] = [

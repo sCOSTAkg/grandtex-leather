@@ -1,29 +1,27 @@
 export interface NavLink {
   /**
-   * Display title for the link.
+   * Заголовок пункта меню.
    */
   title: string;
   /**
-   * Path relative to the site root. When set, clicking the link navigates to this route.
+   * Путь относительно корня сайта. При нажатии происходит переход по этому маршруту.
    */
   href: string;
   /**
-   * Optional child links for dropdown menus.
+   * Необязательные дочерние ссылки для выпадающих меню.
    */
   subLinks?: NavLink[];
 }
 
 /**
- * Default navigation structure used by the Header component. The menu items
- * reflect the structure described in the adaptation guide: services, about,
- * portfolio, production categories and contacts. Add additional links or
- * sub-links as your application grows.
+ * Стандартная структура навигации для компонента Header. Пункты меню
+ * отражают основные разделы сайта.
  */
 export const defaultNavLinks: NavLink[] = [
-  { title: "Leathers", href: "/leathers" },
-  { title: "Why GRANDTEX", href: "/why-grandtex" },
-  { title: "Sustainability", href: "/sustainability" },
-  { title: "Tanneries", href: "/tanneries" },
-  { title: "Highlights", href: "/highlights" },
-  { title: "Contact", href: "/contact" },
+  { title: "Продукция", href: "/products" },
+  { title: "Почему GRANDTEX", href: "/why-grandtex" },
+  { title: "Устойчивое развитие", href: "/sustainability" },
+  { title: "Фабрики", href: "/tanneries" },
+  { title: "Новости", href: "/highlights" },
+  { title: "Контакты", href: "/contact" },
 ];
